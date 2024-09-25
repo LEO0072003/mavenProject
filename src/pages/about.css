@@ -1,0 +1,250 @@
+.aboutwrap{
+    width: 100%;
+    position: relative;
+}
+
+.aboutcont{
+   width: 100%;
+ margin-top: 130px;
+}
+
+.aboutheader{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.aboutheader img{
+    width: 100%;
+    max-height: 700px;
+    height: 100%;
+    background-position:center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+
+.aboutustext{
+    font-family: Inter;
+font-size: 96px;
+font-weight: 700;
+line-height: 116.18px;
+text-align: center;
+position: absolute;
+color: #FFFFFF;
+}
+
+
+.abouimg{
+    width: 100%;
+    max-height: 400px;
+    height: 100%;
+}
+
+.contcustn{
+    width: 200px;
+height: 44px;
+border-radius: 10px;
+background: #CCF32F;
+box-shadow: 4px 4px 4px 0px #0000000D;
+
+
+}
+.contcustn span{
+    font-family: Poppins;
+font-size: 16px;
+font-weight: 600;
+line-height: 20px;
+color: #000000;
+
+}
+
+.paraabout{
+    font-family: Poppins;
+font-size: 18px;
+font-weight: 400;
+line-height: 27px;
+text-align: center;
+
+}
+
+/* form  */
+.formwrap{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 1200;
+
+}
+
+.formconta{
+    max-width: 600px;
+background-color: white;
+}
+
+.abou_main_inner{
+    background-color: #D9D9D9;
+ width: 100%;
+}
+
+.abou_main{
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.singabcon{
+    max-width: 750px;
+    width: 100%;
+height: 659px;
+background-color: white;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+flex-direction: column;
+gap: 38px;
+padding: 0px 100px;
+}
+
+.oddside{
+    align-self: flex-end; /* Align odd-indexed items to the right */
+
+}
+.singabcon h2{
+    font-family: Inter;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 50.76px;
+    text-align: left;
+color: #000000;    
+}
+.singabcon p{
+    font-family: Inter;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26.63px;
+    text-align: left;
+color: #000000;    
+}
+
+.readygobanner{
+    width: 100%;
+    height: 348px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.readygobanner img{
+    width: 100vw;
+    height: 348px;
+   
+}
+
+.gobanncontet{
+     position: absolute;
+     display: flex;
+     flex-direction: column;
+     gap: 50px;
+     max-width: 422px;
+     width: 100%;
+     align-items: center;
+}
+.gobanncontet h3{
+    font-family: Playfair Display;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 63.98px;
+    text-align: center;
+color: #FFFFFF;    
+}
+.gobanncontet button{
+    width: 185px;
+    height: 47px;
+    border: 2px ;
+    background: #CCF32F;
+    border: 2px solid #CCF32F;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    gap: 10px;
+    border-radius: 25px;
+}
+.gobanncontet button img{
+    max-width: 17px;
+    max-height: 17px;
+}
+.gobanncontet button span{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+color: #141841;    
+}
+
+@media (max-width:750px) {
+    .singabcon{
+    padding: 40px;
+    }
+    .aboutustext{
+   font-size: 50px;
+   line-height: 60px;
+    }
+    .gobanncontet h3{
+      font-size: 38px;
+      line-height: 48px;
+    }
+    
+.lastBox{
+    height: 400px !important;
+}    
+}
+
+@media (max-width:500px) {
+
+    .abou_main{
+        margin-top: 40px;
+    }
+    
+.singabcon{
+height: 550px;
+padding: 20px;
+}
+    .singabcon h2{
+     font-size: 28px;
+     line-height: 38px;
+    }
+    .singabcon p{
+      font-size: 18px;
+      line-height: 28px;
+    }
+  
+
+}
+
+
+@media (max-width:450px) {
+    .abou_main{
+        margin-top: 100px;
+    }
+    .singabcon{
+        height: 700px;
+         
+        }
+        .gobanncontet h3{
+            font-size: 28px;
+            line-height: 38px;
+          }
+}

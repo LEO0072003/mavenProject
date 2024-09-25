@@ -1,0 +1,358 @@
+.sec3wrap{
+    width: 100%;
+    position: relative;
+}
+
+.sec3cont{
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    padding: 40px 14px;
+align-items: center;
+height: 100%;
+}
+
+
+.sec3right{
+    background: #000000;
+    box-shadow: 5px 4px 7.5px 0px #00000040;
+width: calc(100% - 368px);
+height: 200px;
+border-radius: 0px 20px 20px 0px;
+display: flex;
+justify-content:space-between;
+gap: 20px;
+align-items: center;
+padding: 0px 40px;
+
+}
+
+.se3righleft{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.se3righleft p{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+color: #FFFFFF;    
+}
+.se3righleft h3{
+    font-family: Golos Text;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 33.6px;
+    max-width: 453px;
+    text-align: left;
+color: #FFFFFF;    
+}
+
+.booknow{
+    width: 158px;
+height: 60px;
+border-radius: 12px ;
+background: #CCF32F;
+
+}
+.booknow span{
+    font-family: Golos Text;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+color: #000000;    
+}
+
+
+/* for section 5  */
+.hsec5wrap{
+    width: 100%;
+    position: relative;
+}
+
+.hsec5cont{
+    max-width: 1400px;
+    margin:0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    align-items: center;
+    padding: 40px 14px;
+}
+.hsec5cont h2{
+    font-family: Poppins;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 55.99px;
+    text-align: center;
+color: #2B2B3D;    
+}
+
+.brwseritems{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mySwiper2{
+    width: 100% !important;
+    height: fit-content !important;
+    padding: 20px 5px !important;
+}
+.sec5Item{
+    max-width: 364px;
+    margin: 0 auto;
+    width: 100%;
+    height: 450px;
+    background: #FFFFFF;
+border: 1px solid #E3E3E3;
+padding: 16px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+gap: 18px;
+border-radius: 12px;
+
+}
+
+
+.sec5img{
+    width: 100%;
+    max-height: 189px;
+    height: 100%;
+
+}
+.s5itemclock{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.s5itemclock img{
+   max-width: 18px;
+   max-height: 18px;
+}
+.s5itemclock span{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+color: #858396;    
+}
+.s5imepara{
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+color: #2B2B3D;    
+max-width: 243px;
+}
+
+.s5itemprice{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-family: Poppins;
+font-size: 32px;
+font-weight: 600;
+line-height: 48px;
+text-align: left;
+color: #000000;
+}
+.s5itemprice span{
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22.5px;
+    text-align: left;
+color: #969494;    
+}
+
+.s5conteent{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkdetabtns1{
+    width: 100%;
+    height: 50px ;
+    background: #CCF32F; 
+    border-radius: 10px;
+}
+.checkdetabtns1 span{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+color: #000000;    
+}
+
+.sec3disbanner{
+    display: none;
+}
+
+.topdestiwrap{
+    display: none;
+}
+
+@media (max-width:1140px) {
+    .se3righleft p{
+      font-size: 14px;
+    }
+    .se3righleft h3{
+        font-size: 22px;
+    }
+    
+}
+
+@media (max-width:1000px) {
+    .sec3cont{
+        display: none;
+    }
+    .sec3disbanner{
+        display: flex;
+        max-width: 550px;
+        width: 100%;
+        max-height: 474px;
+        height: 100%;
+        margin: 0 auto 36px auto;
+        position: relative;
+           align-items: center;
+           justify-content: center;
+           padding: 0px 18px;
+    }
+
+    .bannerimg{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .bannerimgfilter{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 0px 18px;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .s3bancontent{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 290px;
+        position: absolute;
+        
+    }
+    .s3bancontent h4{
+        font-family: Poppins;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 47px;
+        text-align: left;
+color: #FFFFFF;        
+    }
+    .s3bancontent p{
+        font-family: Poppins;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 25px;
+        text-align: left;
+color: #FFFFFF;        
+    }
+    .s3bancontent button{
+        max-width: 292px;
+height: 60px;
+border-radius: 12px ;
+background: #CCF32F;
+font-family: Golos Text;
+font-size: 16px;
+font-weight: 500;
+line-height: 19.2px;
+color: #000000;
+    }
+}
+
+@media (max-width:550px) {
+    .bwseritembtn{
+        display: none;
+    }
+    .hsec5cont h2{
+        font-size: 28px;
+     
+    }
+}
+@media (max-width:500px) {
+    .s3bancontent h4{
+        font-size: 24px;
+          
+    }
+    .singleTopdesti img{
+       
+        height: 420px !important;
+    }
+    .s3bancontent p{
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 25px;
+        text-align: left;
+color: #FFFFFF;        
+    }
+    .s3bancontent button{
+        max-width: 232px;
+height: 60px;
+border-radius: 12px ;
+background: #CCF32F;
+font-family: Golos Text;
+font-size: 16px;
+font-weight: 500;
+line-height: 19.2px;
+color: #000000;
+    }
+}
+
+@media (max-width:690px) {
+    .topdestiwrap{
+        display: flex;
+    }
+    .singleTopdesti{
+        position: relative;
+        max-width: 70vh;
+        margin: 0 auto;
+
+    }
+    .singleTopdesti img{
+        border-radius: 20px;
+        width: 100%;
+        height: 550px;
+    }
+    .destiname{
+        position: absolute;
+        font-family: Inter;
+font-size: 24px;
+font-weight: 700;
+line-height: 29.05px;
+color: #FFFFFF;
+left: 24px;
+bottom: 24px;
+max-width: 200px;
+width: 100%;
+    }
+}
+
+@media (max-width:370px) {
+    .hsec5cont h2{
+     font-size: 24px;
+     line-height: 34px;
+    }
+    
+}
