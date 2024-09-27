@@ -39,8 +39,26 @@ gap: 10px;
 list-style: none; 
 
 }
+.pdsec3secodiv2{
+    width: 100%;
+padding: 20px;
+border-radius: 10px ;
+border: 1px solid #E1DFDF;
+margin: 40px 10px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+list-style: none; 
+
+}
 
 .pdsec3secodiv label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.pdsec3secodiv2 label{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,11 +70,62 @@ list-style: none;
     flex-direction: column;
     gap: 10px;
 }
+
 .ttiwrap h4{
     font-family: Poppins;
     font-size: 16px;
     font-weight: 600;
     line-height: 26px;
+}
+
+.ttiwrap2{
+    display: none;
+}
+
+.bolabewraps{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (max-width:670px) {
+    .ttiwrap{
+        display: none;
+    }
+    .ttiwrap2{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 1px solid #E1DFDF;
+        border-radius: 10px;
+        padding: 5px 10px 0px 10px;
+
+    }
+    .toalcofd{
+ padding: 0px 10px;
+    }
+    .pdsec3secodiv2{
+        padding: 10px;
+    }
+    .ttiwrap2 h4{
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 26px;
+    }
+
+    .packdetailInsidesec23{
+        display: flex; 
+        flex-direction: column;
+        gap: 10px;
+        overflow: hidden;
+    }
+    .bolabewraps{
+        border: 1px solid #E1DFDF;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
 }
 
 .pdsec3secodiv label p{
@@ -67,7 +136,37 @@ list-style: none;
     max-width: 80%;
     
 }
+.pdsec3secodiv2 label p{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    /* padding: 0px 5px; */
+    line-height: 26px;
+    /* max-width: %; */
+    
+}
+.ttwratop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    /* padding: 0px 10px; */
+}
+.ttwratop span{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+
+}
 .pdsec3secodiv label span{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    
+}
+.pdsec3secodiv2 label span{
     font-family: Poppins;
     font-size: 16px;
     font-weight: 400;
@@ -277,6 +376,13 @@ margin-top: 20px;
     font-weight: 600 !important;
 }
 
+.toalcofd p{
+    font-weight: 600 !important;
+}
+.toalcofd span{
+    font-weight: 600 !important;
+}
+
 @media (max-width:550px) {
     .singlediv .headingdiv p{
         font-size: 18px;
@@ -290,6 +396,22 @@ margin-top: 20px;
     .itempriceleft{
         padding: 0px 0px 0px 0px;
 
+    }
+    .ttiwrap2 h4{
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .pdsec3secodiv2 label p{
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .ttwratop span{
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .pdsec3secodiv2 label span{
+        font-size: 14px;
+        line-height: 24px;
     }
 }
 

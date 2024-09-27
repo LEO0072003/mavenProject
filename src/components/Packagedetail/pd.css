@@ -15,6 +15,37 @@
     gap: 6px;
 }
 
+.totalcost2{
+    font-family: Poppins;
+font-size: 14px;
+font-weight: 600;
+line-height: 27px;
+color: #000000;
+}
+
+.chiwithma{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    
+}
+.chiwithma p{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    
+}
+.chiwithma span{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    
+}
+
+  
+
 
 .tranpoorwrap{
     display: flex;
@@ -1170,6 +1201,7 @@ color: #008753;
     .totalcost{
         font-size: 14px;
         line-height: 24px;
+        width: 140px;
     }
   }
 
@@ -1267,10 +1299,10 @@ max-width: 124px;
         display: flex;
         flex-direction: column;
     }
-    .totalcost{
+    /* .totalcost{
         max-width: 90px;
         font-size: 10px !important;
-        }
+        } */
     .pdSec2left h2{
       font-size: 20px;
       line-height: 30px;
@@ -1303,6 +1335,8 @@ padding: 15px 16px;
     .totalcost{
         font-size: 12px;
         line-height: 20px;
+        width: 110px;
+
     }
   }
 

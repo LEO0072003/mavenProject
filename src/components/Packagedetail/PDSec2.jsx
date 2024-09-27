@@ -151,15 +151,7 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
 
           <p className="line2"></p>
 
-          {/* <div className="triphigh">
-            <h3>{LEFTSIDECONTENT1.tripHighlightsHeading}</h3>
-
-            <ul>
-              {LEFTSIDECONTENT1.tripHightlight.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </div> */}
+        
 
           <div className="toogleBtns">
             {data?.map((d, index) => (
@@ -235,20 +227,7 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
 </div>
 
 
-                        
 
-                          {/* <label>
-                            <div className="shadowdiv">
-                              <p>{item.from}</p>
-                            </div>
-                            <p className="fromtag">FROM</p>
-                          </label>
-                          <label>
-                            <div className="shadowdiv">
-                              <p>{item.to}</p>
-                            </div>
-                            <p className="fromtag">TO</p>
-                          </label> */}
                         </div>
                       </>
                     )}
@@ -263,8 +242,9 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
 
         <div className="staywrap">
       {/* Clickable header */}
-      <div className="cursor-pointer" onClick={toggleOpen}>
-        <p className="totalcost">Hotels</p>
+      <div className="cursor-pointer flex justify-between" onClick={toggleOpen}>
+        <p className="totalcost2">Hotels</p>
+       <p className="totalcost2">{packageView?.hotelCP}</p>
       </div>
 
       {/* Collapsible section */}
@@ -293,17 +273,28 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
             <div className="stayright">{item.price}</div>
 
           </div>
+
+ {
+  item?.childequa &&
+          <div className="chiwithma">
+             <p>Child without mattress {item?.childequa} </p> <span>{item?.childprice}</span>
+          </div>
+          }
+
+          {
+            item.childwtiheq && 
+            <div className="chiwithma">
+            <p>Child with mattress {item?.childwtiheq} </p> <span>{item?.childwprice}</span>
+         </div>
+          }
           
          
           </>
         ))}
 
-         {/* <div className="totalstay">
-           <p>Total</p>
-            <span>{packageView?.totalStay}</span>
-         </div> */}
 
       </motion.div>
+
     </div>
 
 
@@ -399,6 +390,7 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
             </form>
           </div>
         </div>
+
       </div>
 
       {!showform && (
