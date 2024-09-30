@@ -46,9 +46,9 @@ function PDSec3({ sectionRef2, packageView }) {
 
 
         <div className="ttiwrap2">
-          <div className="ttwratop">
+          <div onClick={toggleOpen} className="ttwratop">
 
-      <h4 onClick={toggleOpen} style={{ cursor: 'pointer' }}> Transportation And Tickets       </h4>
+      <h4  style={{ cursor: 'pointer' }}> Transportation And Tickets       </h4>
       <span className="ml-4">{packageView?.packageTotal}</span>
           </div>
  
