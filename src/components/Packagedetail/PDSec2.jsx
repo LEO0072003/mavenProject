@@ -5,6 +5,7 @@ import { LEFTSIDECONTENT1, RIGHTSIDECONTENT2 } from "../../Data/PackageDetail";
 import { IoIosArrowDown } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import emailjs from '@emailjs/browser';
+import toast from "react-hot-toast";
 
 
 const data = ["ITINERARY", "SUMMARISED VIEW"];
@@ -36,19 +37,23 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    // const toastId = toast.loading("Loading...");
+    
     emailjs
-      .sendForm("service_smlm0mi", 'template_h5vec96', form.current, {
-        publicKey: 'T46Q2vlyp0v8VpFSE',
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
+    .sendForm("service_v2wateq", 'template_cj1kbsn', form.current, {
+      publicKey: 'teMT0rnZ9JGkmP7O5',
+    })
+    .then(
+      () => {
+        console.log('SUCCESS!');
+        toast.success("Successfuly Send");
+      },
+      (error) => {
+        console.log('FAILED...', error.text);
+        toast.error("Something went wrong")
+      },
       );
+      // toast.dismiss(toastId);
   };
 
     // Toggle the section open/close

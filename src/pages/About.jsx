@@ -9,6 +9,7 @@ import emailjs from '@emailjs/browser';
 import arrright from "../assets/arrow-right-02.png"
 import Footer from '../Common/Footer'
 import Footer2 from '../Common/Footer2'
+import toast from "react-hot-toast";
 
 const data = [
     {
@@ -33,20 +34,24 @@ function About() {
   const form = useRef();
 
   const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm("service_smlm0mi", 'template_h5vec96', form.current, {
-        publicKey: 'T46Q2vlyp0v8VpFSE',
+    //  const toastId = toast.loading("Loading...");
+     e.preventDefault();
+     
+     emailjs
+     .sendForm("service_v2wateq", 'template_cj1kbsn', form.current, {
+       publicKey: 'teMT0rnZ9JGkmP7O5',
       })
       .then(
         () => {
           console.log('SUCCESS!');
+          toast.success("Successfuly Send");
         },
         (error) => {
           console.log('FAILED...', error.text);
+          toast.error("Something went wrong")
         },
       );
+      // toast.dismiss(toastId);
   };
 
 

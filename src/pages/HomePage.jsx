@@ -14,6 +14,7 @@ import "./about.css"
 import { RIGHTSIDECONTENT2 } from '../Data/PackageDetail'
 import { ImCross } from "react-icons/im";
 import emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast'
 
 
 function HomePage() {
@@ -23,18 +24,22 @@ function HomePage() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm("service_smlm0mi", 'template_h5vec96', form.current, {
-        publicKey: 'T46Q2vlyp0v8VpFSE',
+    // const toastId = toast.loading("Loading...");
+    
+    emailjs.sendForm("service_v2wateq", 'template_cj1kbsn', form.current, {
+        publicKey: 'teMT0rnZ9JGkmP7O5',
       })
       .then(
         () => {
           console.log('SUCCESS!');
+          toast.success("Successfuly Send");
         },
         (error) => {
           console.log('FAILED...', error.text);
+          toast.error("Something went wrong")
         },
       );
+      // toast.dismiss(toastId);
   };
 
 

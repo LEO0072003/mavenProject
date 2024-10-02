@@ -13,6 +13,7 @@ import { ImCross } from 'react-icons/im';
 import emailjs from '@emailjs/browser';
 import Footer from '../Common/Footer';
 import Footer2 from '../Common/Footer2';
+import toast from 'react-hot-toast';
 
 
 function PackageDetail() {
@@ -26,21 +27,25 @@ function PackageDetail() {
    const form = useRef();
 
    const sendEmail = (e) => {
-     e.preventDefault();
- 
-     emailjs
-       .sendForm("service_smlm0mi", 'template_h5vec96', form.current, {
-         publicKey: 'T46Q2vlyp0v8VpFSE',
-       })
-       .then(
-         () => {
-           console.log('SUCCESS!');
-         },
-         (error) => {
-           console.log('FAILED...', error.text);
-         },
-       );
-   };
+    e.preventDefault();
+
+    // const toastId = toast.loading("Loading...");
+    emailjs
+    .sendForm("service_v2wateq", 'template_cj1kbsn', form.current, {
+      publicKey: 'teMT0rnZ9JGkmP7O5',
+    })
+    .then(
+      () => {
+        console.log('SUCCESS!');
+        toast.success("Successfuly Send");
+      },
+      (error) => {
+        console.log('FAILED...', error.text);
+        toast.error("Something went wrong")
+      },
+    );
+    // toast.dismiss(toastId);
+  };
 
 
    useEffect(() => {
