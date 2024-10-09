@@ -10,6 +10,8 @@ import location from "../assets/location.png";
 import scubadiving from "../assets/Scuba Diving.jpg"
 import kayak from "../assets/Kayaking.jpg"
 import Snorkelling  from "../assets/Snorkelling.jpg"
+import  radhanagar  from "../assets/Radhanagar Beach.png"
+import   kalpadhar from "../assets/Kalapathar Beach.png"
 
 // top packages images 
 import a1 from "../assets/a1.jpg"
@@ -71,10 +73,10 @@ export const TOP_DESTINATIONS = {
   image2: frame4,
   title2: "Corbyn's Cove Beach",
 
-  // image3: frame3,
+  image3: radhanagar ,
   title3: "Radhanagar Beach",
 
-  // image4: frame2,
+  image4: kalpadhar,
   title4: "Kalapathar Beach",
 
   image5: frame3,

@@ -23,8 +23,6 @@ function HomePage() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    // const toastId = toast.loading("Loading...");
     
     emailjs.sendForm("service_v2wateq", 'template_cj1kbsn', form.current, {
         publicKey: 'teMT0rnZ9JGkmP7O5',
@@ -39,7 +37,6 @@ function HomePage() {
           toast.error("Something went wrong")
         },
       );
-      // toast.dismiss(toastId);
   };
 
 
