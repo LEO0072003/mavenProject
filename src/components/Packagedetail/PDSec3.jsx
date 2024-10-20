@@ -51,7 +51,7 @@ function PDSec3({ sectionRef2, packageView }) {
       <h4  style={{ cursor: 'pointer' }}> Transportation And Tickets       </h4>
       <span className="ml-4">{packageView?.packageTotal}</span>
           </div>
- 
+
 
       {packageView?.transportTicket?.map((item, index) => (
         <motion.div
@@ -67,7 +67,7 @@ function PDSec3({ sectionRef2, packageView }) {
         >
           <label className="">
             <p>{item?.title}   <span>({item?.price})</span> </p>
-          
+
           </label>
 
           <hr className="" />
@@ -88,7 +88,7 @@ function PDSec3({ sectionRef2, packageView }) {
         </motion.div>
       ))}
 
-    
+
     </div>
 
 
@@ -102,7 +102,7 @@ function PDSec3({ sectionRef2, packageView }) {
         </label>
 
         <label>
-          <p>MavenAndaman Service Charge 5 %:</p>
+          <p>MavenAndaman Service Charge:</p>
           <span>{packageView?.serviceCharge}</span>
         </label>
 
@@ -110,7 +110,7 @@ function PDSec3({ sectionRef2, packageView }) {
           <p>5% GST on service charge:</p>
           <span>{packageView?.GSTCharge}</span>
         </label>
-        
+
         <label className="boldlabel">
           <p>Grand total:</p>
           <span>{packageView?.GrandTotal}</span>

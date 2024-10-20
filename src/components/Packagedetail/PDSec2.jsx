@@ -38,7 +38,7 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
   const sendEmail = (e) => {
     e.preventDefault();
     // const toastId = toast.loading("Loading...");
-    
+
     emailjs
     .sendForm("service_v2wateq", 'template_cj1kbsn', form.current, {
       publicKey: 'teMT0rnZ9JGkmP7O5',
@@ -156,7 +156,7 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
 
           <p className="line2"></p>
 
-        
+
 
           <div className="toogleBtns">
             {data?.map((d, index) => (
@@ -264,7 +264,7 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
           <>
 
     <hr className="mt-5" />
-         
+
           <div key={index} className="singstary">
 
             {/* left side */}
@@ -287,13 +287,13 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
           }
 
           {
-            item.childwtiheq && 
+            item.childwtiheq &&
             <div className="chiwithma">
             <p>Child with mattress {item?.childwtiheq} </p> <span>{item?.childwprice}</span>
          </div>
           }
-          
-         
+
+
           </>
         ))}
 

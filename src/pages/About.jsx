@@ -19,20 +19,20 @@ import a4 from "../assets/a4.jpg"
 const data = [
     {
        img: a4 ,
-        title:"Travel the world one place at a time" , 
-        para:"ManvenAndaman, a leading travel agency in the mesmerizing islands of Andaman, was founded by the passionate couple Prashant Ullal and Anita Singh. With a remarkable experience of 10 years in the industry, we dedicate ourselves to providing you with an unforgettable travel experience. We specialize in creating individualized itineraries that appeal to your particular interests and tastes, from immaculate beaches to beautiful coral reefs. With our extensive local knowledge and attention to detail, you can be sure that your trip to Andaman will be perfectly organized, enabling you to create lifelong memories.."
-    }  , 
+        title:"Affordable Andaman Adventures: Explore the Islands with Us" ,
+        para:"ManvenAndaman, a leading travel agency nestled in the mesmerizing islands of Andaman, was founded by the passionate couple Prashant Ullal and Anita Singh. With a remarkable experience of 10 years in the industry, we dedicate ourselves to providing you with an unforgettable travel experience at an affordable price. Our expertise includes crafting individualized itineraries that cater to your specific interests and tastes, from immaculate beaches to beautiful coral reefs."
+    }  ,
     {
-       img: a2 , 
-        title:"We are a team of Experts" , 
-        para:"Our travel specialists are committed to creating the ideal itinerary for every tourist, drawing on years of experience and in-depth knowledge of the Andaman Islands. We handle every aspect of your trip, from picking the ideal lodging to planning thrilling activities and transportation. " , 
-        para2:"From the moment you contact us, We will work closely with you to develop a custom itinerary that meets your needs by getting to know your interests and preferences. We take pride in our expertise, attention to detail, and dedication to going above and beyond for our clients."
-    }  , 
+       img: a2 ,
+        title:"The Leading Travel Agency in Andaman: Committed to Delivering Your Best Experience" ,
+        para:"At ManvenAndaman, a leading travel agency nestled in the mesmerizing islands of Andaman, we are passionate about delivering the best travel experiences. Founded by the dedicated couple Prashant Ullal and Anita Singh, we bring over 10 years of experience in the industry. Our commitment is to provide you with an unforgettable travel experience at an affordable price." ,
+        para2:"We specialize in crafting personalized tour plans that cater to your specific interests and tastes, from immaculate beaches to beautiful coral reefs. Our Andaman packages are designed to ensure you enjoy the best experience possible, tailored to your preferences."
+    }  ,
     {
-      img: a3 , 
-        title:"Our Mission" , 
-        para:"To provide exceptional travel services and custom itineraries that satisfy each traveler’s interests and needs. We work hard to provide seamless planning, knowledgeable direction, and outstanding customer service, assuring a trouble-free experience from start to finish."
-    }  , 
+      img: a3 ,
+        title:"Our Mission" ,
+        para:"We provide exceptional personalized travel services and tailored tour plans that cater to the unique interests and needs of our travelers. Our team works diligently to ensure hassle-free planning, offering expert travel guidance and outstanding customer service. With a focus on delivering unforgettable travel experiences, we are dedicated to ensuring a stress-free travel journey from start to finish."
+    }  ,
 ]
 
 
@@ -44,7 +44,7 @@ function About() {
   const sendEmail = (e) => {
     //  const toastId = toast.loading("Loading...");
      e.preventDefault();
-     
+
      emailjs
      .sendForm("service_v2wateq", 'template_cj1kbsn', form.current, {
        publicKey: 'teMT0rnZ9JGkmP7O5',
@@ -96,7 +96,7 @@ function About() {
                         <p>{item.para}</p>
                         <p>{item?.para2}</p>
                         </div>
-                         
+
                        </div>
                     </div>
                 ))
@@ -124,7 +124,7 @@ function About() {
 
 
         {
-  openform && 
+  openform &&
 
 
 <div className="formwrap">
@@ -186,7 +186,7 @@ function About() {
               name="message"
               id=""
               placeholder="Message..."
-              
+
             ></textarea>
 
             <button className="requeeqebtn">
@@ -194,7 +194,7 @@ function About() {
             </button>
           </form>
         </div>
-  
+
 </div>
 
 </div>

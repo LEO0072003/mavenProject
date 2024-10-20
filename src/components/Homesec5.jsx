@@ -30,7 +30,7 @@ function Homesec5() {
   return (
     <div className="hsec5wrap">
       <div className="hsec5cont">
-        <h2>Top Andaman Tour Packages</h2>
+        <h2>Our Best selling Andaman Tour Packages</h2>
 
         <div className="brwseritems">
           <img src={left} alt="left" onClick={handlePrevClick} className="bwseritembtn" style={{ cursor: 'pointer' }} />
@@ -60,21 +60,21 @@ function Homesec5() {
                 <SwiperSlide>
                 <div key={index} className="sec5Item">
                   <img src={item.img} alt="img" className="sec5img" />
-  
+
                   <div className="s5conteent">
                     <div className="s5itemclock">
                       <img src={clock} alt="" />
                       <span>{item.dayNight}</span>
                     </div>
-  
+
                     <p className="s5imepara">
                      {item.title}
                     </p>
-  
+
                   </div>
 
                   <p className='perperontext'>₹{Math.floor(item?.GrandTotal/item?.numberOfPeople)} <span>/- Each Person</span></p>
-  
+
                  <a href={`/packageDetail/${item.id}`}> <button className="checkdetabtns1">
                     <span>CHECK DETAILS</span>
                   </button>
@@ -83,7 +83,7 @@ function Homesec5() {
               </SwiperSlide>
               ))
             }
-         
+
           </Swiper>
 
           <img src={right} alt="right" onClick={handleNextClick} className="bwseritembtn" style={{ cursor: 'pointer' }} />
