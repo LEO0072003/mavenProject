@@ -161,7 +161,7 @@ export const RIGHTSIDECONTENT1 = {
 
     // CLASSNAME (formdetail)
     export const RIGHTSIDECONTENT2 = {
-        heading:"Weave Your Story: Create Lasting Memories in the Andamans in INR"
+        heading:"Weave Your Story: Create Lasting Memories with Maven Andamans"
     }
 
     // ***************** RIGHT SIDE CONTENT END *************
