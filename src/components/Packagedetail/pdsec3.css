@@ -65,6 +65,10 @@ list-style: none;
     gap: 10px;
 }
 
+.ddthrmargin{
+    margin-right: 70px;
+}
+
 .ttiwrap{
     display: flex;
     flex-direction: column;

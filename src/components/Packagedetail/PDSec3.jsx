@@ -34,7 +34,7 @@ function PDSec3({ sectionRef2, packageView }) {
           {packageView?.transportTicket?.map((item, index) => (
             <label className="" key={index}>
               <p>{item?.title}</p>
-              <span>{item?.price}</span>
+              <span className="ddthrmargin">{item?.price}</span>
             </label>
           ))}
 
@@ -66,7 +66,7 @@ function PDSec3({ sectionRef2, packageView }) {
           style={{ overflow: "hidden" }}
         >
           <label className="">
-            <p>{item?.title}   <span>({item?.price})</span> </p>
+            <p>{item?.title}  <span>({item?.price})</span> </p>
 
           </label>
 
