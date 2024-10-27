@@ -334,7 +334,8 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
             }`}
           >
             <h3>
-              {RIGHTSIDECONTENT2.heading} {packageView?.totalbudget}
+              {RIGHTSIDECONTENT2.heading}
+              {/* {packageView?.totalbudget} */}
             </h3>
 
             <form ref={form} onSubmit={sendEmail}>

@@ -360,10 +360,10 @@ export const TOP_PACKAGES = [
       ] ,
       packageTotal:"32,325" ,
       packageSubTotal:"69,045" ,
-      serviceCharge:"3,452" ,
-      GSTCharge:"173" ,
-      GrandTotal:72670 ,
-      GrandTotal2:"72,670" ,
+      serviceCharge:"10,356" ,
+      GSTCharge:"517" ,
+      GrandTotal:79918 ,
+      GrandTotal2:"79,918" ,
       numberOfPeople:3
 
     },
@@ -603,10 +603,10 @@ export const TOP_PACKAGES = [
       ] ,
       packageTotal:"30,615" ,
       packageSubTotal:"64,719" ,
-      serviceCharge:"3,236" ,
-      GSTCharge:"162" ,
-      GrandTotal:68117 ,
-      GrandTotal2:"68,117" ,
+      serviceCharge:"9,708" ,
+      GSTCharge:"485" ,
+      GrandTotal:74832 ,
+      GrandTotal2:"74,832" ,
        numberOfPeople:4
 
     },
@@ -834,10 +834,10 @@ export const TOP_PACKAGES = [
       ] ,
       packageTotal:"33,970" ,
       packageSubTotal:"95,170" ,
-      serviceCharge:"4,759" ,
-      GSTCharge:"238" ,
-      GrandTotal:100167 ,
-      GrandTotal2:"1,00,167" ,
+      serviceCharge:"14,275" ,
+      GSTCharge:"713" ,
+      GrandTotal:110158 ,
+      GrandTotal2:"1,10,158" ,
        numberOfPeople:6
 
     },
@@ -1058,10 +1058,10 @@ export const TOP_PACKAGES = [
       ] ,
       packageTotal:" 19,385" ,
       packageSubTotal:"43,209" ,
-      serviceCharge:"2,160" ,
-      GSTCharge:"108" ,
-      GrandTotal:45477,
-      GrandTotal2:"45,477",
+      serviceCharge:"6,481" ,
+      GSTCharge:"324" ,
+      GrandTotal:50014,
+      GrandTotal2:"50,014",
        numberOfPeople:2
 
     },
@@ -1301,10 +1301,10 @@ export const TOP_PACKAGES = [
       ] ,
       packageTotal:"31,595" ,
       packageSubTotal:"72,095" ,
-      serviceCharge:"3,605" ,
-      GSTCharge:"180" ,
-      GrandTotal:75880 ,
-      GrandTotal2:"75,880" ,
+      serviceCharge:"10,814" ,
+      GSTCharge:"540" ,
+      GrandTotal:83449 ,
+      GrandTotal2:"83,449" ,
        numberOfPeople:4
 
     },
@@ -1550,10 +1550,10 @@ export const TOP_PACKAGES = [
       ] ,
       packageTotal:"19,895" ,
       packageSubTotal:"61,335" ,
-      serviceCharge:"3,067" ,
-      GSTCharge:"153" ,
-      GrandTotal:64555 ,
-      GrandTotal2:"64,555",
+      serviceCharge:"9,200" ,
+      GSTCharge:"460" ,
+      GrandTotal:70995 ,
+      GrandTotal2:"70,995",
        numberOfPeople:2
 
     },
@@ -1750,10 +1750,10 @@ export const TOP_PACKAGES = [
       ] ,
       packageTotal:"14,525" ,
       packageSubTotal:"35,725" ,
-      serviceCharge:"1,786" ,
-      GSTCharge:"89" ,
-      GrandTotal:37600,
-      GrandTotal2:"37,600",
+      serviceCharge:"5358" ,
+      GSTCharge:"267" ,
+      GrandTotal:40350,
+      GrandTotal2:"41,350",
        numberOfPeople:2
 
     },
@@ -1989,10 +1989,10 @@ export const TOP_PACKAGES = [
       ] ,
       packageTotal:"19,335" ,
       packageSubTotal:"46,439" ,
-      serviceCharge:"2,322" ,
-      GSTCharge:"116" ,
-      GrandTotal:48877 ,
-      GrandTotal2:"48,877" ,
+      serviceCharge:"6,965" ,
+      GSTCharge:"348" ,
+      GrandTotal:53752 ,
+      GrandTotal2:"53,752" ,
        numberOfPeople:2
 
     },
@@ -2247,10 +2247,10 @@ export const TOP_PACKAGES = [
       ] ,
       packageTotal:"39,125" ,
       packageSubTotal:"68,325" ,
-      serviceCharge:"3,416" ,
-      GSTCharge:"171" ,
-      GrandTotal:71912,
-      GrandTotal2:"71,912",
+      serviceCharge:"10,248" ,
+      GSTCharge:"512" ,
+      GrandTotal:79085,
+      GrandTotal2:"79,085",
       numberOfPeople:4
 
     },
@@ -2536,10 +2536,10 @@ export const TOP_PACKAGES = [
       ] ,
       packageTotal:"54,450" ,
       packageSubTotal:"1,01,250" ,
-      serviceCharge:"5,063" ,
-      GSTCharge:"253" ,
-      GrandTotal:106566 ,
-      GrandTotal2:"1,06,566",
+      serviceCharge:"15,187" ,
+      GSTCharge:"759" ,
+      GrandTotal:117196 ,
+      GrandTotal2:"1,17,196",
        numberOfPeople:6
 
     },
