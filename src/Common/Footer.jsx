@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Footer() {
 
 
-  const phoneNumber = '918900913929'; // Replace with the phone number
+  const phoneNumber = '917695041144'; // Replace with the phone number
 
   const handleClick = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}`;
@@ -16,15 +16,15 @@ function Footer() {
   return (
     <footer className="footerwrap">
       <div className="footecont">
-        
+
         <div className="footercdetails">
-          
+
           {/* frist section */}
           <div className="fotsec2">
 
             <label>
               <h3>Call Us</h3>
-              <p>+91 8900913929</p>
+              <p>+91 7695041144</p>
             </label>
 
             <label>
@@ -46,7 +46,7 @@ function Footer() {
           <div className="fotsec1">
             <label>
               <h3>Social Media</h3>
-              <a href="https://www.instagram.com/mavenandaman/"><p>Instagram</p> </a> 
+              <a href="https://www.instagram.com/mavenandaman/"><p>Instagram</p> </a>
              <a href="https://www.facebook.com/mavenandaman/"> <p>Facebook</p> </a>
              <a href="#" onClick={handleClick}>  <p>WhatsApp</p></a>
             </label>
@@ -64,7 +64,7 @@ function Footer() {
 
         </div>
 
-    
+
       </div>
     </footer>
   );
