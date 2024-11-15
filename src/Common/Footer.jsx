@@ -24,7 +24,7 @@ function Footer() {
 
             <label>
               <h3>Call Us</h3>
-              <p>+91 7695041144</p>
+              <p>+91 8900913929</p>
             </label>
 
             <label>

@@ -67,7 +67,7 @@ function PackageDetail() {
 
    const [isInView2, setIsInView2] = useState(true);
    const sectionRef2 = useRef(null);
- 
+
    useEffect(() => {
      const observer = new IntersectionObserver(
        ([entry]) => {
@@ -77,19 +77,19 @@ function PackageDetail() {
          threshold: 0.1, // Change this value as needed
        }
      );
- 
+
      if (sectionRef2.current) {
        observer.observe(sectionRef2.current);
      }
- 
+
      return () => {
        if (sectionRef2.current) {
          observer.unobserve(sectionRef2.current);
        }
      };
    }, []);
- 
-   
+
+
 
    return (
      <section className='packageWrap'>
@@ -114,9 +114,9 @@ function PackageDetail() {
        <Footer />
          <Footer2 />
 
- 
+
 {
-  openform && 
+  openform &&
 
 <div className="formwrap">
 
@@ -177,7 +177,7 @@ function PackageDetail() {
               name="message"
               id=""
               placeholder="Message..."
-              
+
             ></textarea>
 
             <button className="requeeqebtn">
@@ -185,7 +185,7 @@ function PackageDetail() {
             </button>
           </form>
         </div>
-  
+
 </div>
 
 </div>
