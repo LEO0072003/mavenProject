@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Footer() {
 
 
-  const phoneNumber = '917695041144'; // Replace with the phone number
+  const phoneNumber = '918900913929'; // Replace with the phone number
 
   const handleClick = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}`;
