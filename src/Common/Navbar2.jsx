@@ -13,27 +13,27 @@ import { RIGHTSIDECONTENT2 } from '../Data/PackageDetail'
 
 const data = [
   {
-    title:"Home" , 
-    link:"/" 
-  } , 
+    title:"Home" ,
+    link:"/"
+  } ,
   {
-    title:"Places" , 
-    link:"/place" 
-  } , 
+    title:"Places" ,
+    link:"/place"
+  } ,
   {
-    title:"Packages" , 
-    link:"/packages" 
-  } , 
+    title:"Packages" ,
+    link:"/packages"
+  } ,
   {
-    title:"About" , 
-    link:"/about" , 
-  } , 
+    title:"About" ,
+    link:"/about" ,
+  } ,
   {
-    title:"Contact" , 
+    title:"Contact" ,
     link:""
-  } , 
+  } ,
   {
-    title:"" , 
+    title:"" ,
     link:""
   }
 ]
@@ -59,13 +59,43 @@ function Navbar2() {
     };
   }, []);
 
-  
+
   const [openform2 , setOpenform2] = useState(false);
   const form = useRef();
 
-  const sendEmail = (e) => {
+const sendEmail = (e) => {
     e.preventDefault();
-    
+    // Validation logic
+    const formElements = form.current.elements;
+    const errors = [];
+
+    if (!formElements.from_name.value.trim()) {
+      errors.push('Full Name is required.');
+    }
+
+    if (!formElements.from_email.value.trim()) {
+      errors.push('Email is required.');
+    } else if (!/\S+@\S+\.\S+/.test(formElements.from_email.value.trim())) {
+      errors.push('Enter a valid email address.');
+    }
+
+    if (!formElements.from_number.value.trim()) {
+      errors.push('Phone Number is required.');
+    }
+
+    if (!formElements.from_travel.value.trim()) {
+      errors.push('Travel Date is required.');
+    }
+
+    if (!formElements.from_duration.value.trim()) {
+      errors.push('Duration is required.');
+    }
+
+    if (errors.length > 0) {
+      alert(errors.join('\n')); // You can customize the error display as needed.
+      return;
+    }
+
     emailjs.sendForm("service_v2wateq", 'template_cj1kbsn', form.current, {
         publicKey: 'teMT0rnZ9JGkmP7O5',
       })
@@ -86,7 +116,7 @@ function Navbar2() {
     <>
     <div>
 
-  
+
 
       <div className={`navbar2wrap ${scrolled ? "scrolled" : ""}`}>
 
@@ -97,15 +127,15 @@ function Navbar2() {
           {/* nav items */}
           <ul className="navitems2">
             {data.map((d, index) =>
-              index !== 4 ? 
+              index !== 4 ?
               <NavLink to={d.link} >  <li  key={index}>{d.title}</li> </NavLink>
              :
              <li  className="cursor-pointer" onClick={()=>setOpenform2(true)} key={index}>{d.title}</li>
-             
+
             )}
           </ul>
 
-        
+
 <IoReorderThreeSharp onClick={()=>setOpensidebar(true)} className="IoReorderThreeSharp "  />
 
 
@@ -134,11 +164,11 @@ function Navbar2() {
             </div>
         </motion.div>
 
-      
+
     </div>
 
     {
-  openform2 && 
+  openform2 &&
 
 
 <div className="formwrap">
@@ -200,7 +230,7 @@ function Navbar2() {
                 name="message"
                 id=""
                 placeholder="Message..."
-                
+
               ></textarea>
 
               <button className="requeeqebtn">
@@ -208,7 +238,7 @@ function Navbar2() {
               </button>
             </form>
           </div>
-    
+
   </div>
 
 </div>

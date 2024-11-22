@@ -23,7 +23,37 @@ function HomePage() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    
+    // Validation logic
+    const formElements = form.current.elements;
+    const errors = [];
+
+    if (!formElements.from_name.value.trim()) {
+      errors.push('Full Name is required.');
+    }
+
+    if (!formElements.from_email.value.trim()) {
+      errors.push('Email is required.');
+    } else if (!/\S+@\S+\.\S+/.test(formElements.from_email.value.trim())) {
+      errors.push('Enter a valid email address.');
+    }
+
+    if (!formElements.from_number.value.trim()) {
+      errors.push('Phone Number is required.');
+    }
+
+    if (!formElements.from_travel.value.trim()) {
+      errors.push('Travel Date is required.');
+    }
+
+    if (!formElements.from_duration.value.trim()) {
+      errors.push('Duration is required.');
+    }
+
+    if (errors.length > 0) {
+      alert(errors.join('\n')); // You can customize the error display as needed.
+      return;
+    }
+
     emailjs.sendForm("service_v2wateq", 'template_cj1kbsn', form.current, {
         publicKey: 'teMT0rnZ9JGkmP7O5',
       })
@@ -44,7 +74,7 @@ function HomePage() {
     <div>
 
        <Home setOpenform={setOpenform} />
-       
+
    <Homesec2 />
 
    <Homesec3 setOpenform={setOpenform} />
@@ -68,7 +98,7 @@ function HomePage() {
 
 
 {
-  openform && 
+  openform &&
 
 
 <div className="formwrap">
@@ -130,7 +160,7 @@ function HomePage() {
                 name="message"
                 id=""
                 placeholder="Message..."
-                
+
               ></textarea>
 
               <button className="requeeqebtn">
@@ -138,7 +168,7 @@ function HomePage() {
               </button>
             </form>
           </div>
-    
+
   </div>
 
 </div>
