@@ -1,228 +1,139 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 import "./home.css";
-import Navbar2 from '../Common/Navbar2';
-import PDSec1 from '../components/Packagedetail/PDSec1';
-import PDSec2 from '../components/Packagedetail/PDSec2';
-import PDSec3 from '../components/Packagedetail/PDSec3';
-import PdSec1Animation from '../components/Packagedetail/PdSec1Animation';
-import { useNavigate, useParams } from 'react-router-dom';
-import { TOP_PACKAGES } from '../Data/Home';
-import Homesec5 from '../components/Homesec5';
-import { RIGHTSIDECONTENT2 } from '../Data/PackageDetail';
-import { ImCross } from 'react-icons/im';
-import emailjs from '@emailjs/browser';
-import Footer from '../Common/Footer';
-import Footer2 from '../Common/Footer2';
-import toast from 'react-hot-toast';
-
+import Navbar2 from "../Common/Navbar2";
+import PDSec1 from "../components/Packagedetail/PDSec1";
+import PDSec2 from "../components/Packagedetail/PDSec2";
+import PDSec3 from "../components/Packagedetail/PDSec3";
+import PdSec1Animation from "../components/Packagedetail/PdSec1Animation";
+import { useNavigate, useParams } from "react-router-dom";
+import { TOP_PACKAGES } from "../Data/Home";
+import Homesec5 from "../components/Homesec5";
+import { ImCross } from "react-icons/im";
+import emailjs from "@emailjs/browser";
+import Footer from "../Common/Footer";
+import Footer2 from "../Common/Footer2";
+import toast from "react-hot-toast";
 
 function PackageDetail() {
-   const { id } = useParams();
-   const navigate = useNavigate();
+  const { id } = useParams();
+  const navigate = useNavigate();
 
-   const [packageView, setPackageView] = useState(null);
-   const [openform , setOpenform ] = useState(false);
+  const [packageView, setPackageView] = useState(null);
+  const [openform, setOpenform] = useState(false);
 
+  const form = useRef();
 
-   const form = useRef();
-
-   const sendEmail = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
     // Validation logic
     const formElements = form.current.elements;
     const errors = [];
 
     if (!formElements.from_name.value.trim()) {
-      errors.push('Full Name is required.');
+      errors.push("Full Name is required.");
     }
 
     if (!formElements.from_email.value.trim()) {
-      errors.push('Email is required.');
+      errors.push("Email is required.");
     } else if (!/\S+@\S+\.\S+/.test(formElements.from_email.value.trim())) {
-      errors.push('Enter a valid email address.');
+      errors.push("Enter a valid email address.");
     }
 
     if (!formElements.from_number.value.trim()) {
-      errors.push('Phone Number is required.');
+      errors.push("Phone Number is required.");
     }
 
     if (!formElements.from_travel.value.trim()) {
-      errors.push('Travel Date is required.');
+      errors.push("Travel Date is required.");
     }
 
     if (!formElements.from_duration.value.trim()) {
-      errors.push('Duration is required.');
+      errors.push("Duration is required.");
     }
 
     if (errors.length > 0) {
-      alert(errors.join('\n')); // You can customize the error display as needed.
+      alert(errors.join("\n")); // You can customize the error display as needed.
       return;
     }
 
-    emailjs.sendForm("service_v2wateq", 'template_cj1kbsn', form.current, {
-        publicKey: 'teMT0rnZ9JGkmP7O5',
+    emailjs
+      .sendForm("service_v2wateq", "template_cj1kbsn", form.current, {
+        publicKey: "teMT0rnZ9JGkmP7O5",
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          console.log("SUCCESS!");
           toast.success("Successfuly Send");
         },
         (error) => {
-          console.log('FAILED...', error.text);
-          toast.error("Something went wrong")
-        },
+          console.log("FAILED...", error.text);
+          toast.error("Something went wrong");
+        }
       );
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-   useEffect(() => {
-     window.scrollTo(0, 0);
-   }, []);
+  useEffect(() => {
+    const packageView = TOP_PACKAGES.find((pkg) => pkg.id === parseInt(id));
 
-   useEffect(() => {
+    if (!packageView) {
+      navigate("/");
+    } else {
+      setPackageView(packageView);
+    }
+  }, [id, navigate]);
 
-     const packageView = TOP_PACKAGES.find((pkg) => pkg.id === parseInt(id));
+  const [isInView2, setIsInView2] = useState(true);
+  const sectionRef2 = useRef(null);
 
-     if (!packageView) {
-       navigate("/");
-     } else {
-       setPackageView(packageView);
-     }
-   }, [id, navigate]);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView2(entry.isIntersecting);
+      },
+      {
+        threshold: 0.1, // Change this value as needed
+      }
+    );
 
+    if (sectionRef2.current) {
+      observer.observe(sectionRef2.current);
+    }
 
+    return () => {
+      if (sectionRef2.current) {
+        observer.unobserve(sectionRef2.current);
+      }
+    };
+  }, []);
 
-   const [isInView2, setIsInView2] = useState(true);
-   const sectionRef2 = useRef(null);
+  return (
+    <section className="packageWrap">
+      <Navbar2 />
 
-   useEffect(() => {
-     const observer = new IntersectionObserver(
-       ([entry]) => {
-         setIsInView2(entry.isIntersecting);
-       },
-       {
-         threshold: 0.1, // Change this value as needed
-       }
-     );
+      <div className="pacakageWrapCont">
+        <PDSec1 />
 
-     if (sectionRef2.current) {
-       observer.observe(sectionRef2.current);
-     }
+        <PdSec1Animation />
 
-     return () => {
-       if (sectionRef2.current) {
-         observer.unobserve(sectionRef2.current);
-       }
-     };
-   }, []);
+        <PDSec2
+          setOpenform={setOpenform}
+          packageView={packageView}
+          isInView2={isInView2}
+        />
 
+        <PDSec3 packageView={packageView} sectionRef2={sectionRef2} />
 
+        <Homesec5 />
+      </div>
 
-   return (
-     <section className='packageWrap'>
-       <Navbar2 />
-
-       <div className="pacakageWrapCont">
-         <PDSec1 />
-
-         <PdSec1Animation />
-
-          <PDSec2 setOpenform={setOpenform}  packageView={packageView} isInView2={isInView2} />
-
-         <PDSec3 packageView={packageView}  sectionRef2={sectionRef2} />
-
-         <Homesec5 />
-
-
-         {/* <PDSec5 /> */}
-       </div>
-
-
-       <Footer />
-         <Footer2 />
-
-
-{
-  openform &&
-
-<div className="formwrap">
-
-<div className="formconta">
-
-<div className={`formdetail`}>
-          <h3 className='flex items-center justify-between'>
-            {RIGHTSIDECONTENT2.heading}
-            <ImCross onClick={()=>setOpenform(false)} fontSize={26} className='cursor-pointer' />
-          </h3>
-
-          <form ref={form} onSubmit={sendEmail}>
-            <label>
-              <p>
-                Full Name <span>*</span>
-              </p>
-              <input type="text" name='from_name' />
-            </label>
-
-            <label>
-              <p>
-                Email <span>*</span>
-              </p>
-              <input type="email" name='from_email' />
-            </label>
-
-            <div className="dohalf">
-              <input
-                type="number"
-                placeholder="+91"
-                className="phonenumbeint"
-              />
-              <input
-                type="number"
-                placeholder="Your Phone*"
-                className="myphone"
-                  name='from_number'
-              />
-            </div>
-
-            <div className="dohalf">
-              <input
-                type="text"
-                placeholder="Travel Date*"
-                className="Traveldate"
-                name='from_travel'
-              />
-              <input
-                type="text"
-                placeholder="Duration*"
-                className="Duration"
-                name='from_duration'
-              />
-            </div>
-
-            <textarea
-              className="textaremesge"
-              name="message"
-              id=""
-              placeholder="Message..."
-
-            ></textarea>
-
-            <button className="requeeqebtn">
-              <span>REQUEST ENQUIRY</span>
-            </button>
-          </form>
-        </div>
-
-</div>
-
-</div>
-
-
-}
-
-
-     </section>
-   );
+      <Footer />
+      <Footer2 />
+    </section>
+  );
 }
 
 export default PackageDetail;

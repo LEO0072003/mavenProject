@@ -3,7 +3,6 @@ import "./about.css"
 import img1 from '../assets/Rectangle1960.png'
 import img3 from '../assets/Rectangle18.png'
 import { useRef, useState } from "react";
-import { RIGHTSIDECONTENT2 } from "../Data/PackageDetail";
 import { ImCross } from "react-icons/im";
 import emailjs from '@emailjs/browser';
 import arrright from "../assets/arrow-right-02.png"
@@ -150,83 +149,6 @@ const sendEmail = (e) => {
 
 
 
-        {
-  openform &&
-
-
-<div className="formwrap">
-
-<div className="formconta">
-
-<div className={`formdetail`}>
-          <h3 className='flex items-center justify-between'>
-            {RIGHTSIDECONTENT2.heading}
-            <ImCross onClick={()=>setOpenform(false)} fontSize={26} className='cursor-pointer' />
-          </h3>
-
-          <form ref={form} onSubmit={sendEmail}>
-            <label>
-              <p>
-                Full Name <span>*</span>
-              </p>
-              <input type="text" name='from_name' />
-            </label>
-
-            <label>
-              <p>
-                Email <span>*</span>
-              </p>
-              <input type="email" name='from_email' />
-            </label>
-
-            <div className="dohalf">
-              <input
-                type="number"
-                placeholder="+91"
-                className="phonenumbeint"
-              />
-              <input
-                type="number"
-                placeholder="Your Phone*"
-                className="myphone"
-                  name='from_number'
-              />
-            </div>
-
-            <div className="dohalf">
-              <input
-                type="text"
-                placeholder="Travel Date*"
-                className="Traveldate"
-                name='from_travel'
-              />
-              <input
-                type="text"
-                placeholder="Duration*"
-                className="Duration"
-                name='from_duration'
-              />
-            </div>
-
-            <textarea
-              className="textaremesge"
-              name="message"
-              id=""
-              placeholder="Message..."
-
-            ></textarea>
-
-            <button className="requeeqebtn">
-              <span>REQUEST ENQUIRY</span>
-            </button>
-          </form>
-        </div>
-
-</div>
-
-</div>
-
-}
     </div>
   )
 }

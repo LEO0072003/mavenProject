@@ -7,11 +7,7 @@ import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 import toast from "react-hot-toast";
-import { ImCross } from "react-icons/im";
-import { RIGHTSIDECONTENT2 } from '../Data/PackageDetail'
-
-
-
+import Email from "./Email";
 
 const data = [
   {
@@ -166,79 +162,7 @@ function Navbar() {
 {
   openform2 &&
 
-
-<div className="formwrap">
-
-  <div className="formconta">
-
-  <div className={`formdetail`}>
-            <h3 className='flex items-center justify-between'>
-              {RIGHTSIDECONTENT2.heading}
-              <ImCross onClick={()=>setOpenform2(false)} fontSize={26} className='cursor-pointer' />
-            </h3>
-
-            <form ref={form} onSubmit={sendEmail}>
-              <label>
-                <p>
-                  Full Name <span>*</span>
-                </p>
-                <input type="text" name='from_name' />
-              </label>
-
-              <label>
-                <p>
-                  Email <span>*</span>
-                </p>
-                <input type="email" name='from_email' />
-              </label>
-
-              <div className="dohalf">
-                  <input
-                    type="number"
-                    placeholder="+91"
-                    className="phonenumbeint"
-                  />
-                <input
-                  type="number"
-                  placeholder="Your Phone*"
-                  className="myphone"
-                  name='from_number'
-                />
-              </div>
-
-              <div className="dohalf">
-                <input
-                  type="text"
-                  placeholder="Travel Date*"
-                  className="Traveldate"
-                  name='from_travel'
-                />
-                <input
-                  type="text"
-                  placeholder="Duration*"
-                  className="Duration"
-                  name='from_duration'
-                />
-              </div>
-
-              <textarea
-                className="textaremesge"
-                name="message"
-                id=""
-                placeholder="Message..."
-
-              ></textarea>
-
-              <button className="requeeqebtn">
-                <span>REQUEST ENQUIRY</span>
-              </button>
-            </form>
-          </div>
-
-  </div>
-
-</div>
-
+<Email setOpenform2={setOpenform2} form={form} />
 }
 
 

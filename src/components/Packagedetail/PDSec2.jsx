@@ -362,7 +362,6 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
           >
             <h3>
               {RIGHTSIDECONTENT2.heading}
-              {/* {packageView?.totalbudget} */}
             </h3>
 
             <form ref={form} onSubmit={sendEmail}>
@@ -380,6 +379,13 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
                 <input type="email" name='from_email' required />
               </label>
 
+              <label>
+                <p>
+                  Number Of Travellers <span>*</span>
+                </p>
+                <input type="number" name='nb_trav' required />
+              </label>
+
               <div className="dohalf">
                 <input
                   type="number"
@@ -392,7 +398,7 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
                   placeholder="Your Phone*"
                   className="myphone"
                   required
-                     name='from_number'
+                     name='mobile'
                 />
               </div>
 
@@ -401,13 +407,13 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
                   type="text"
                   placeholder="Travel Date"
                   className="Traveldate"
-                    name='from_travel'
+                    name='dates'
                 />
                 <input
                   type="text"
                   placeholder="Duration"
                   className="Duration"
-                   name='from_duration'
+                   name='dur'
                 />
               </div>
 
@@ -449,14 +455,22 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
                 <p>
                   Full Name <span>*</span>
                 </p>
-                <input type="text" name='from_name' />
+                <input type="text" name='from_name' required />
               </label>
               <label>
                 <p>
                   Email <span>*</span>
                 </p>
-                <input type="email" name='from_email' />
+                <input type="email" name='from_email' required />
               </label>
+
+              <label>
+                  <p>
+                    Number Of Travellers <span>*</span>
+                  </p>
+                  <input type="number" name='nb_trav' required />
+                </label>
+
               <div className="dohalf">
                 <input
                   type="number"
@@ -466,8 +480,9 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
                 <input
                   type="number"
                   placeholder="Your Phone*"
-                  className="myphone"
+                  className="mobile"
                     name='from_number'
+                    required
                 />
               </div>
               <div className="dohalf">
@@ -475,19 +490,22 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
                   type="text"
                   placeholder="Travel Date*"
                   className="Traveldate"
-                      name='from_travel'
+                      name='dates'
+                      required
                 />
                 <input
                   type="text"
                   placeholder="Duration*"
                   className="Duration"
-                    name='from_duration'
+                    name='dur'
+                    required
                 />
               </div>
               <textarea
                 className="textaremesge"
                 placeholder="Message..."
                   name="message"
+                  required
               ></textarea>
               <button className="requeeqebtn">
                 <span>REQUEST ENQUIRY</span>
