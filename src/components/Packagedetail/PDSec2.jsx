@@ -53,15 +53,20 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
         () => {
             console.log('SUCCESS!');
             toast.success("Successfully Sent");
-        },
-        (error) => {
+            setLoading(false);
+            toast.dismiss(toastId);
+            setShowForm(false);
+          },
+          (error) => {
             console.log('FAILED...', error.text);
             toast.error("Something went wrong");
+            setLoading(false);
+            toast.dismiss(toastId);
+            setShowForm(false);
         }
     );
 
-     setLoading(false);
-    toast.dismiss(toastId);
+  
 };
 
 
@@ -463,8 +468,8 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
                 <input
                   type="number"
                   placeholder="Your Phone*"
-                  className="mobile"
-                    name='from_number'
+                  className="myphone"
+                    name='mobile'
                     required
                 />
               </div>

@@ -26,15 +26,24 @@ function Email({setOpenform2}) {
         () => {
             console.log('SUCCESS!');
             toast.success("Successfully Sent");
+            setOpenform2(false)
+            setLoading(false);
+            toast.dismiss(toastId);
+
         },
         (error) => {
             console.log('FAILED...', error.text);
             toast.error("Something went wrong");
+            setOpenform2(false)
+            setLoading(false);
+            toast.dismiss(toastId);
+
         }
+
+
     );
 
-     setLoading(false);
-    toast.dismiss(toastId);
+   
 };
 
 

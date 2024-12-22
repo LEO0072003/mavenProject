@@ -253,7 +253,7 @@ color: #000000;
     max-width: 464px;
     width: 100%;
     padding: 20px;
-    z-index: 10;
+    z-index: 10000000;
     transition: position 0.3s, top 0.3s; /* Smooth transition */
   }
   
@@ -1121,7 +1121,7 @@ padding: 0px 18px;
     }
     .quersmalwidth{
         display: flex;
-        z-index: 10000 !important;
+        z-index: 300 !important;
     }
     .pdsec1aniwrap{
         display: flex;
