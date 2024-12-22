@@ -106,7 +106,12 @@ function Navbar2() {
             </div>
             <div className="allnavitems">
                 {data.map((item, index) => (
-                   <NavLink to={item.link}> <p key={index} className="sinnav">
+                   <NavLink to={item.link}> <p onClick={()=>{
+                    if(item.title === "Contact"){
+                     setOpenform2(true)
+                     setOpensidebar(false)
+                    }
+                 }} key={index} className="sinnav">
                         {item.title}
                     </p> </NavLink>
                 ))}
