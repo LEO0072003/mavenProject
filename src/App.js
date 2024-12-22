@@ -19,10 +19,6 @@ function App() {
   <Route path="/about" element={<About  />} />
   <Route path="/packages" element={<Packages  />} />
 
-
-
-
-
 </Routes>
   </div>
   );
