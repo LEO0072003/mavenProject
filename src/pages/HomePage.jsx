@@ -14,6 +14,7 @@ import "./about.css"
 import { ImCross } from "react-icons/im";
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast'
+import Email from '../Common/Email'
 
 
 function HomePage() {
@@ -95,6 +96,10 @@ function HomePage() {
 
 <Footer2 />
 
+{
+  openform && 
+  <Email setOpenform2={setOpenform} />
+}
 
 
 
