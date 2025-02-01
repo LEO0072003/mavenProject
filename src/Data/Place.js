@@ -1,8 +1,6 @@
 import frame1 from "../assets/frame1.png";
-// import frame1 from "../assets/frame2.png";
 import frame3 from "../assets/frame3.png";
 import frame4 from "../assets/frame4.png";
-// import frame4 from "../assets/frame5.png";
 
 export const TOP_PLACES = [
     { image: frame1, title: "Cellular Jail" , content:"The construction of Cellular Jail started in 1896 and completed in 1906. Spread as seven spokes of a bicycle wheel, this unique three-storied structure was the first of its kind in India as it had 693 cells specially built for solitary confinement of the prisoners. Extraordinary feature of the Jail was the total absence of communication between prisoners housed in different wings since the front of the row of cells faced the back of the other. A two-storied building at left side near the entrance of the Jail was constructed to be used as Jail hospital. On the plinth of this building now stands the Martyr's Column. Near the compound wall at right of the main entrance is the gallows where three persons could be executed simultaneously with a separate door in the outer compound wall to carry our corpses. Many charismatic freedom fighters were imprisoned in this Jail. Savarkar brothers, Hotilal Verma, Babu Ram Hari, Pandit Parmanand, Ladha Ram, Ullaskar Dutt, Barin Kumaar Ghosh, Bhai Parmanand, Indu Bhushan Roy, Prithvi Singh Azad, Pulin Das, Trailokyanath Chakravarthy, Gurumukh Singh, etc. were incarcerated here among others. Revolutionaries involved in Alipore Bomb case, Nasik Conspiracy Case, Lahore Conspiracy Case, Chittagong Armoury Raid Case, Inter-Provincial Conspiracy Case, Gaya Conspiracy Case were also brought to the Cellular Jail under long terms of imprisonment." },

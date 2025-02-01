@@ -7,13 +7,11 @@ import { Navigation } from "swiper/modules";
 import left from "../assets/leftbtns.png";
 import right from "../assets/rightbtns.png";
 import clock from "../assets/clock.png";
-import { TOP_PACKAGES } from "../Data/Home";
-import { useNavigate } from "react-router-dom";
+import { TOP_PACKAGES , discount } from "../Data/Home";
 
 function Homesec5() {
-  const swiperRef = useRef(null); // Create a reference for the Swiper instance
+  const swiperRef = useRef(null); 
 
-  const navigate = useNavigate();
 
   const handlePrevClick = () => {
     if (swiperRef.current) {
@@ -73,7 +71,7 @@ function Homesec5() {
 
                   </div>
 
-                  <p className='perperontext'>₹{Math.floor(item?.GrandTotal/item?.numberOfPeople)} <span>/- Each Person</span></p>
+                  <p className='perperontext'>₹{((Math.floor(item?.GrandTotal/item?.numberOfPeople))*discount).toFixed(0)} <span>/- Each Person</span></p>
 
                  <a href={`/packageDetail/${item.id}`}> <button className="checkdetabtns1">
                     <span>CHECK DETAILS</span>

@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./pdsec3.css";
 import { motion } from "framer-motion";
+import { discount } from "../../Data/Home";
 
 
 function PDSec3({ sectionRef2, packageView }) {
+
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -11,6 +13,7 @@ function PDSec3({ sectionRef2, packageView }) {
     setIsOpen(!isOpen); // Toggle open/close state
   };
 
+  console.log("apack",packageView);
 
   return (
     <div ref={sectionRef2} className="pdsec3wrap">
@@ -113,7 +116,11 @@ function PDSec3({ sectionRef2, packageView }) {
 
         <label className="boldlabel">
           <p>Grand total:</p>
+           <div className="gratoflexwrap">
           <span>{packageView?.GrandTotal}</span>
+           <span className="strivenow"></span>
+           <p>{((packageView?.GrandTotal)*discount).toFixed(0)}</p>
+           </div>
         </label>
 
         </div>

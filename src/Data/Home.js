@@ -22,6 +22,10 @@ import a5 from "../assets/a5.jpg"
 import a6 from "../assets/a6.jpg"
 
 
+export const discount = 0.9;
+
+
+
 // =========== Home.jsx file data ===========
 export const HEADER_DATA = {
   heading: "Explore Andaman Tourism Packages with Maven Andaman",
