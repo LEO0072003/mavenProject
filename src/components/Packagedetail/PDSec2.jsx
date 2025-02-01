@@ -6,6 +6,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import emailjs from '@emailjs/browser';
 import toast from "react-hot-toast";
+import { discount } from "../../Data/Home";
 
 
 const data = ["ITINERARY", "SUMMARISED VIEW"];
@@ -325,7 +326,7 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
 
               <div className="pds2left">
                 <p className="pdlepar1">
-                  <div>INR</div> <p>{Math.floor(packageView?.GrandTotal/packageView?.numberOfPeople)}</p> <span>per person</span>{" "}
+                  <div>INR</div> <p>{((Math.floor(packageView?.GrandTotal/packageView?.numberOfPeople))*discount).toFixed(0)}</p> <span>per person</span>{" "}
                 </p>
               </div>
             </div>

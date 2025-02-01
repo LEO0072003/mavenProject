@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar2 from "../Common/Navbar2";
-import { TOP_PACKAGES } from "../Data/Home";
+import { discount, TOP_PACKAGES } from "../Data/Home";
 import icon from "../assets/icon.png";
 import "./package.css";
 
@@ -26,7 +26,7 @@ function Packages() {
               </div>
             </div>
 
-            <p className="suubtitle2">{item.subtitle} <p className='perperontext2'>₹{Math.floor(item?.GrandTotal/item?.numberOfPeople)} <span>/person</span></p></p>
+            <p className="suubtitle2">{item.subtitle} <p className='perperontext2'>₹{((Math.floor(item?.GrandTotal/item?.numberOfPeople)*discount).toFixed(0))} <span>/person</span></p></p>
 
 
             <a href={`/packageDetail/${item.id}`} className="checkdbtns">
