@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar2 from "../Common/Navbar2";
-import { discount, TOP_PACKAGES } from "../Data/Home";
+import { discount, TOP_PACKAGES } from "../Data/AllPackages";
 import icon from "../assets/icon.png";
 import "./package.css";
 

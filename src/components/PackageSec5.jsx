@@ -7,7 +7,7 @@ import { Navigation } from "swiper/modules";
 import left from "../assets/leftbtns.png";
 import right from "../assets/rightbtns.png";
 import clock from "../assets/clock.png";
-import { TOP_PACKAGES } from "../Data/Home";
+import { TOP_PACKAGES } from "../Data/AllPackages";
 import { useNavigate } from "react-router-dom";
 
 function PackageSec5() {

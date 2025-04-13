@@ -7,7 +7,7 @@ import { Navigation } from "swiper/modules";
 import left from "../assets/leftbtns.png";
 import right from "../assets/rightbtns.png";
 import clock from "../assets/clock.png";
-import { GSTCharge, TOP_PACKAGES , discount, serviceCharge } from "../Data/Home";
+import { GSTCharge, TOP_PACKAGES , discount, serviceCharge } from "../Data/AllPackages";
 
 function Homesec5() {
   const swiperRef = useRef(null); 
@@ -73,12 +73,12 @@ function Homesec5() {
 
                   <p className='perperontext'>₹ {new Intl.NumberFormat().format(
                       Math.floor(
-                        (
+                        ((
                           (item?.subtotal_to_cal +
                             Math.round(item?.subtotal_to_cal * serviceCharge) +
                             Math.round(item?.subtotal_to_cal * serviceCharge * GSTCharge)) /
                           item?.numberOfPeople
-                        ).toFixed(0)
+                        )*discount).toFixed(0)
                       )
                     )} <span>/- Each Person</span></p>
                   {/* <p className='perperontext'>₹{((Math.floor(item?.GrandTotal/item?.numberOfPeople))*discount).toFixed(0)} <span>/- Each Person</span></p> */}

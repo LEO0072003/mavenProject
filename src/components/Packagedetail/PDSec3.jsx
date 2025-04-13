@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./pdsec3.css";
 import { motion } from "framer-motion";
-import { discount , serviceCharge , GSTCharge } from "../../Data/Home";
+import { discount , serviceCharge , GSTCharge } from "../../Data/AllPackages";
 
 
 

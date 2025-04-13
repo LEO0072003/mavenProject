@@ -4,7 +4,7 @@ import "./component.css"
 import 'swiper/css';
 import 'swiper/css/navigation'; // Import navigation styles
 import { Navigation  , Autoplay , Pagination  } from 'swiper/modules';
-import {  GSTCharge, TOP_PACKAGES  , discount, serviceCharge} from '../Data/Home';
+import {  GSTCharge, TOP_PACKAGES  , discount, serviceCharge} from '../Data/AllPackages';
 import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 
 
@@ -65,14 +65,14 @@ const Home2swiper = forwardRef((props, ref) => {
              <p className="suubtitle">{item.subtitle} </p>
              <p className='perperontext'>
   {new Intl.NumberFormat().format(
-    Math.floor(
+    (Math.floor(
     
         (item?.subtotal_to_cal +
           Math.round(item?.subtotal_to_cal * serviceCharge) +
           Math.round(item?.subtotal_to_cal * serviceCharge * GSTCharge)) /
         item?.numberOfPeople
     
-    ).toFixed(0)
+    )*discount).toFixed(0)
   )}
   <span>/- Each Person</span>
 </p>

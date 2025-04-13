@@ -6,7 +6,7 @@ import PDSec2 from "../components/Packagedetail/PDSec2";
 import PDSec3 from "../components/Packagedetail/PDSec3";
 import PdSec1Animation from "../components/Packagedetail/PdSec1Animation";
 import { useNavigate, useParams } from "react-router-dom";
-import { TOP_PACKAGES } from "../Data/Home";
+import { TOP_PACKAGES } from "../Data/AllPackages";
 import Homesec5 from "../components/Homesec5";
 import { ImCross } from "react-icons/im";
 import emailjs from "@emailjs/browser";
