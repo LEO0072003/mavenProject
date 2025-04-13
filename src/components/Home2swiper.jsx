@@ -4,7 +4,7 @@ import "./component.css"
 import 'swiper/css';
 import 'swiper/css/navigation'; // Import navigation styles
 import { Navigation  , Autoplay , Pagination  } from 'swiper/modules';
-import {  TOP_PACKAGES  , discount} from '../Data/Home';
+import {  GSTCharge, TOP_PACKAGES  , discount, serviceCharge} from '../Data/Home';
 import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 
 
@@ -63,7 +63,21 @@ const Home2swiper = forwardRef((props, ref) => {
 
   <div className="eahpersonwap">
              <p className="suubtitle">{item.subtitle} </p>
-             <p className='perperontext'>₹{((Math.floor(item?.GrandTotal/item?.numberOfPeople))*discount).toFixed(0)} <span>/- Each Person</span></p>
+             <p className='perperontext'>
+  {new Intl.NumberFormat().format(
+    Math.floor(
+    
+        (item?.subtotal_to_cal +
+          Math.round(item?.subtotal_to_cal * serviceCharge) +
+          Math.round(item?.subtotal_to_cal * serviceCharge * GSTCharge)) /
+        item?.numberOfPeople
+    
+    ).toFixed(0)
+  )}
+  <span>/- Each Person</span>
+</p>
+
+             {/* <p className='perperontext'> {((Math.floor(item?.GrandTotal/item?.numberOfPeople))*discount).toFixed(0)} <span>/- Each Person</span></p> */}
   </div>
 
 

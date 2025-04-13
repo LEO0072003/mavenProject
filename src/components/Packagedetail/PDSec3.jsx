@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./pdsec3.css";
 import { motion } from "framer-motion";
-import { discount } from "../../Data/Home";
+import { discount , serviceCharge , GSTCharge } from "../../Data/Home";
+
 
 
 function PDSec3({ sectionRef2, packageView }) {
@@ -10,10 +11,8 @@ function PDSec3({ sectionRef2, packageView }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
-    setIsOpen(!isOpen); // Toggle open/close state
+    setIsOpen(!isOpen); 
   };
-
-  console.log("apack",packageView);
 
   return (
     <div ref={sectionRef2} className="pdsec3wrap">
@@ -26,7 +25,14 @@ function PDSec3({ sectionRef2, packageView }) {
       <ul className="pdsec3secodiv2">
         <label className="toalcofd">
           <p>Total for the hotels on CP Plan</p>
-          <span>{packageView?.hotelCP}</span>
+             <p className="totalcost2">
+            {new Intl.NumberFormat().format(
+              packageView?.stayAt?.reduce(
+                (total, currentval) => total + currentval.price_to_cal + currentval.childprice_to_cal,
+                0
+              )
+            )}
+          </p>
         </label>
 
         <hr />
@@ -43,7 +49,12 @@ function PDSec3({ sectionRef2, packageView }) {
 
           <label>
             <p>Total</p>
-            <span>{packageView?.packageTotal}</span>
+            <span>
+  {new Intl.NumberFormat().format(
+    packageView?.transportTicket?.reduce((total, currentval) => total + currentval.price_to_cal, 0)
+  )}
+</span>
+
           </label>
         </div>
 
@@ -52,7 +63,9 @@ function PDSec3({ sectionRef2, packageView }) {
           <div onClick={toggleOpen} className="ttwratop">
 
       <h4  style={{ cursor: 'pointer' }}> Transportation And Tickets       </h4>
-      <span className="ml-4">{packageView?.packageTotal}</span>
+      <span className="ml-4">  {new Intl.NumberFormat().format(
+    packageView?.transportTicket?.reduce((total, currentval) => total + currentval.price_to_cal, 0)
+  )} </span>
           </div>
 
 
@@ -106,20 +119,54 @@ function PDSec3({ sectionRef2, packageView }) {
 
         <label>
           <p>MavenAndaman Service Charge:</p>
-          <span>{packageView?.serviceCharge}</span>
+          <span>
+  {new Intl.NumberFormat().format((packageView?.subtotal_to_cal * serviceCharge).toFixed(0))}
+</span>
+
         </label>
 
         <label>
           <p>5% GST on service charge:</p>
-          <span>{packageView?.GSTCharge}</span>
+          <span>  {new Intl.NumberFormat().format((packageView?.subtotal_to_cal * serviceCharge*GSTCharge).toFixed(0))}
+          </span>
         </label>
 
         <label className="boldlabel">
           <p>Grand total:</p>
+
+
+
            <div className="gratoflexwrap">
-          <span>{packageView?.GrandTotal}</span>
+
+
+
+           <span>
+  {new Intl.NumberFormat().format(
+      Math.floor(
+        (
+          (packageView?.subtotal_to_cal +
+            Math.round(packageView?.subtotal_to_cal * serviceCharge) +
+            Math.round(packageView?.subtotal_to_cal * serviceCharge * GSTCharge))
+        ) 
+      )
+    )}
+</span>
+
+
+
+
+
            <span className="strivenow"></span>
-           <p>{((packageView?.GrandTotal)*discount).toFixed(0)}</p>
+           <p>
+  {new Intl.NumberFormat().format(
+      (Math.floor(
+          (packageView?.subtotal_to_cal +
+            Math.round(packageView?.subtotal_to_cal * serviceCharge) +
+            Math.round(packageView?.subtotal_to_cal * serviceCharge * GSTCharge))
+      )*discount).toFixed(0)
+    )}
+</p>
+
            </div>
         </label>
 

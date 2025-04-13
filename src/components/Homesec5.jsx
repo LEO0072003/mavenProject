@@ -7,7 +7,7 @@ import { Navigation } from "swiper/modules";
 import left from "../assets/leftbtns.png";
 import right from "../assets/rightbtns.png";
 import clock from "../assets/clock.png";
-import { TOP_PACKAGES , discount } from "../Data/Home";
+import { GSTCharge, TOP_PACKAGES , discount, serviceCharge } from "../Data/Home";
 
 function Homesec5() {
   const swiperRef = useRef(null); 
@@ -66,12 +66,22 @@ function Homesec5() {
                     </div>
 
                     <p className="s5imepara">
-                     {item.title}
+                     {item.title} 
                     </p>
 
                   </div>
 
-                  <p className='perperontext'>₹{((Math.floor(item?.GrandTotal/item?.numberOfPeople))*discount).toFixed(0)} <span>/- Each Person</span></p>
+                  <p className='perperontext'>₹ {new Intl.NumberFormat().format(
+                      Math.floor(
+                        (
+                          (item?.subtotal_to_cal +
+                            Math.round(item?.subtotal_to_cal * serviceCharge) +
+                            Math.round(item?.subtotal_to_cal * serviceCharge * GSTCharge)) /
+                          item?.numberOfPeople
+                        ).toFixed(0)
+                      )
+                    )} <span>/- Each Person</span></p>
+                  {/* <p className='perperontext'>₹{((Math.floor(item?.GrandTotal/item?.numberOfPeople))*discount).toFixed(0)} <span>/- Each Person</span></p> */}
 
                  <a href={`/packageDetail/${item.id}`}> <button className="checkdetabtns1">
                     <span>CHECK DETAILS</span>
