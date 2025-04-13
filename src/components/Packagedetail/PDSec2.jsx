@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 import {  discount, GSTCharge, serviceCharge } from "../../Data/AllPackages";
 import 'react-phone-input-2/lib/style.css';
 import PhoneInput from "react-phone-input-2";
-
+import { FaChevronDown } from "react-icons/fa";
 
 const data = ["ITINERARY", "SUMMARISED VIEW"];
 
@@ -34,8 +34,6 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
   const sectionRef = useRef(null);
   const sectionRef2 = useRef(null);
 
-  const [phone, setPhone] = useState("");
-
 
   const [stayIsOpen, setStayIsOpen] = useState(false);
 
@@ -43,52 +41,78 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
 
   const [loading, setLoading] = useState(false);
 
+  const [formData, setFormData] = useState({
+    from_name: '',
+    from_email: '',
+    nb_trav: '',
+    mobile: '',
+    dates: '',
+    dur: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
   
-  const sendEmail = (e) => {
-    e.preventDefault();
-    
-    setLoading(true);
-    const toastId =  toast.loading("Loading...");
 
-    const name = form.current.from_name?.value.trim();
-    const email = form.current.from_email?.value.trim();
-    const travellers = form.current.nb_trav?.value.trim();
-  
-    if (!name || !email || !travellers) {
-      toast.error("Please fill in all required fields (Name, Email, Number of Travellers)");
-      setLoading(false);
-      toast.dismiss(toastId);
-      return;
-    }
-
-    const formData = new FormData(form.current);
-    formData.append("url", window.location.href);
-
-    console.log([...formData]);
-
-    emailjs.sendForm("service_v2wateq", 'template_cj1kbsn', form.current, {
-        publicKey: 'teMT0rnZ9JGkmP7O5',
-    })
-    .then(
-        () => {
-            console.log('SUCCESS!');
-            toast.success("Successfully Sent");
-            form.current.reset();
-
-        },
-        (error) => {
-            console.log('FAILED...', error.text);
-            toast.error("Something went wrong");
-        }
-    ).finally(()=>{
-      setLoading(false);
-      toast.dismiss(toastId);
-
-    })
-
+const handlePhoneChange = (value) => {
+  setFormData(prev => ({
+    ...prev,
+    mobile: value
+  }));
 };
 
-    // Toggle the section open/close
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  const { from_name, from_email, nb_trav } = formData;
+
+  setLoading(true);
+  const toastId = toast.loading("Loading...");
+
+  if (!from_name || !from_email || !nb_trav) {
+    toast.error("Please fill in all required fields (Name, Email, Number of Travellers)");
+    setLoading(false);
+    toast.dismiss(toastId);
+    return;
+  }
+
+  emailjs.send("service_v2wateq", "template_cj1kbsn", {
+    ...formData,
+    current_url: window.location.href,
+  }, {
+    publicKey: "teMT0rnZ9JGkmP7O5",
+  })
+  .then(() => {
+    toast.success("Successfully Sent");
+    setFormData({
+      from_name: '',
+      from_email: '',
+      nb_trav: '',
+      mobile: '',
+      dates: '',
+      dur: '',
+      message: ''
+    });
+  })
+  .catch((error) => {
+    console.error("FAILED...", error);
+    toast.error("Something went wrong");
+  })
+  .finally(() => {
+    setLoading(false);
+    toast.dismiss(toastId);
+  });
+};
+
+
     const toggleOpen = () => {
       setStayIsOpen(!stayIsOpen);
     };
@@ -286,14 +310,17 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
         <div className="staywrap">
       {/* Clickable header */}
       <div className="cursor-pointer flex justify-between" onClick={toggleOpen}>
-        <p className="totalcost2">Hotels</p>
-        <p className="totalcost2">
+        <p className="totalcost2">Hotels </p>
+        <p className="totalcost2 flex items-center gap-3">
   {new Intl.NumberFormat().format(
     packageView?.stayAt?.reduce(
       (total, currentval) => total + currentval.price_to_cal + currentval.childprice_to_cal,
       0
     )
   )}
+
+<FaChevronDown />
+
 </p>
 
       </div>
@@ -391,10 +418,10 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
             }`}
           >
             <h3>
-              {RIGHTSIDECONTENT2.heading}
+              {RIGHTSIDECONTENT2.heading} 
             </h3>
 
-            <form ref={form} onSubmit={sendEmail}>
+            {/* <form ref={form} onSubmit={sendEmail}>
               <label>
                 <p>
                   Full Name <span>*</span>
@@ -416,21 +443,7 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
                 <input type="number" name='nb_trav' required />
               </label>
 
-              {/* <div className="dohalf">
-                <input
-                  type="number"
-                  placeholder="+91"
-                  className="phonenumbeint"
-                  required
-                />
-                <input
-                  type="number"
-                  placeholder="Your Phone*"
-                  className="myphone"
-                  required
-                     name='mobile'
-                />
-              </div> */}
+              
 
 <PhoneInput
   country={'in'} 
@@ -441,7 +454,6 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
     required: true,
     autoFocus: true
   }}
-  // containerStyle={{ marginBottom: '1rem' }}
   inputClass="myphone" 
 
 />
@@ -470,7 +482,85 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
               <button disabled={loading} className="requeeqebtn">
                 <span>REQUEST ENQUIRY</span>
               </button>
-            </form>
+            </form> */}
+
+<form onSubmit={sendEmail}>
+  <label>
+    <p>Full Name <span>*</span></p>
+    <input
+      type="text"
+      name="from_name"
+      value={formData.from_name}
+      onChange={handleChange}
+    />
+  </label>
+
+  <label>
+    <p>Email <span>*</span></p>
+    <input
+      type="email"
+      name="from_email"
+      value={formData.from_email}
+      onChange={handleChange}
+      required
+    />
+  </label>
+
+  <label>
+    <p>Number Of Travellers <span>*</span></p>
+    <input
+      type="number"
+      name="nb_trav"
+      value={formData.nb_trav}
+      onChange={handleChange}
+      required
+    />
+  </label>
+
+  <PhoneInput
+    country={'in'}
+    value={formData.mobile}
+    onChange={handlePhoneChange}
+    inputProps={{
+      name: 'mobile',
+      required: true,
+      autoFocus: true
+    }}
+    inputClass="myphone"
+  />
+
+  <div className="dohalf">
+    <input
+      type="text"
+      placeholder="Travel Date"
+      className="Traveldate"
+      name="dates"
+      value={formData.dates}
+      onChange={handleChange}
+    />
+    <input
+      type="text"
+      placeholder="Duration"
+      className="Duration"
+      name="dur"
+      value={formData.dur}
+      onChange={handleChange}
+    />
+  </div>
+
+  <textarea
+    className="textaremesge"
+    placeholder="Message..."
+    name="message"
+    value={formData.message}
+    onChange={handleChange}
+  ></textarea>
+
+  <button disabled={loading} className="requeeqebtn">
+    <span>REQUEST ENQUIRY</span>
+  </button>
+</form>
+
           </div>
         </div>
 

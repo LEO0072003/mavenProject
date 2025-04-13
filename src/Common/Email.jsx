@@ -3,13 +3,16 @@ import { RIGHTSIDECONTENT2 } from '../Data/PackageDetail'
 import emailjs from '@emailjs/browser';
 import { ImCross } from "react-icons/im";
 import toast from 'react-hot-toast';
-
+import 'react-phone-input-2/lib/style.css';
+import PhoneInput from "react-phone-input-2";
 
 function Email({setOpenform2}) {
 
   const form = useRef(null);
 
   const [loading, setLoading] = useState(false);
+    const [phone, setPhone] = useState("");
+  
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -17,7 +20,6 @@ function Email({setOpenform2}) {
    const toastId =  toast.loading("Loading...");
 
     const formData = new FormData(form.current);
-    console.log([...formData]);
 
     emailjs.sendForm("service_v2wateq", 'template_cj1kbsn', form.current, {
         publicKey: 'teMT0rnZ9JGkmP7O5',
@@ -26,15 +28,19 @@ function Email({setOpenform2}) {
         () => {
             console.log('SUCCESS!');
             toast.success("Successfully Sent");
+            form.current.reset();
+            setPhone("");
+
         },
         (error) => {
             console.log('FAILED...', error.text);
             toast.error("Something went wrong");
         }
-    );
-
-     setLoading(false);
-    toast.dismiss(toastId);
+    ).finally(()=>{
+      setLoading(false);
+      toast.dismiss(toastId);
+      setOpenform2(false);
+    })
 };
 
 
@@ -47,7 +53,7 @@ function Email({setOpenform2}) {
   
     <div className={`formdetail`}>
               <h3 className='flex items-center justify-between'>
-                {RIGHTSIDECONTENT2.heading}
+                {RIGHTSIDECONTENT2.heading} 
                 <ImCross onClick={()=>setOpenform2(false)} fontSize={26} className='cursor-pointer' />
               </h3>
   
@@ -73,7 +79,7 @@ function Email({setOpenform2}) {
                   <input type="number" name='nb_trav' required />
                 </label>
   
-                <div className="dohalf">
+                {/* <div className="dohalf">
                   <input
                     type="number"
                     placeholder="+91"
@@ -86,7 +92,20 @@ function Email({setOpenform2}) {
                       name='mobile'
                       required
                   />
-                </div>
+                </div> */}
+
+<PhoneInput
+  country={'in'} 
+  value={phone}
+  onChange={setPhone}
+  inputProps={{
+    name: 'mobile',
+    required: true,
+    autoFocus: true
+  }}
+  inputClass="myphone" 
+
+/>
   
                 <div className="dohalf">
                   <input
