@@ -6,7 +6,9 @@ import { IoIosArrowDown } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import emailjs from '@emailjs/browser';
 import toast from "react-hot-toast";
-import { discount } from "../../Data/Home";
+import {  discount, GSTCharge, serviceCharge } from "../../Data/AllPackages";
+import 'react-phone-input-2/lib/style.css';
+import PhoneInput from "react-phone-input-2";
 
 
 const data = ["ITINERARY", "SUMMARISED VIEW"];
@@ -32,19 +34,36 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
   const sectionRef = useRef(null);
   const sectionRef2 = useRef(null);
 
+  const [phone, setPhone] = useState("");
+
+
   const [stayIsOpen, setStayIsOpen] = useState(false);
 
   const form = useRef();
 
-
   const [loading, setLoading] = useState(false);
 
+  
   const sendEmail = (e) => {
     e.preventDefault();
+    
     setLoading(true);
-   const toastId =  toast.loading("Loading...");
+    const toastId =  toast.loading("Loading...");
+
+    const name = form.current.from_name?.value.trim();
+    const email = form.current.from_email?.value.trim();
+    const travellers = form.current.nb_trav?.value.trim();
+  
+    if (!name || !email || !travellers) {
+      toast.error("Please fill in all required fields (Name, Email, Number of Travellers)");
+      setLoading(false);
+      toast.dismiss(toastId);
+      return;
+    }
 
     const formData = new FormData(form.current);
+    formData.append("url", window.location.href);
+
     console.log([...formData]);
 
     emailjs.sendForm("service_v2wateq", 'template_cj1kbsn', form.current, {
@@ -54,18 +73,20 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
         () => {
             console.log('SUCCESS!');
             toast.success("Successfully Sent");
+            form.current.reset();
+
         },
         (error) => {
             console.log('FAILED...', error.text);
             toast.error("Something went wrong");
         }
-    );
+    ).finally(()=>{
+      setLoading(false);
+      toast.dismiss(toastId);
 
-     setLoading(false);
-    toast.dismiss(toastId);
+    })
+
 };
-
-
 
     // Toggle the section open/close
     const toggleOpen = () => {
@@ -117,13 +138,12 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
 
   return (
     <>
-      <div className="pdSec2wrap">
+      <div className="pdSec2wrap ">
         {/* left side */}
         <div className="pdSec2left">
           <div className="daynigratingwrap">
-            <span className="dnihsamlle">
-              {" "}
-              {packageView?.days} Days , {packageView?.night} Nights
+            <span className="dnihsamlle"> 
+              {packageView?.days} Days , {packageView?.night} Nights 
             </span>
           </div>
 
@@ -200,7 +220,14 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
                       <p className="arivtext">{item.title}</p>
                       </div>
                       <p className="lineh2"></p>
-                      <p className="totalcost">Total Cost: {item.totalcost}</p>
+                      <p className="totalcost">
+  Total Cost:{" "}
+  {new Intl.NumberFormat().format(
+    item?.transport?.length > 0
+      ? item?.transport?.reduce((total, i) => total + i.price_to_cal, 0)
+      : 0
+  )}
+</p>
                     </nav>
                     <div className="IoIosArrowDownwrap">
 
@@ -260,7 +287,15 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
       {/* Clickable header */}
       <div className="cursor-pointer flex justify-between" onClick={toggleOpen}>
         <p className="totalcost2">Hotels</p>
-       <p className="totalcost2">{packageView?.hotelCP}</p>
+        <p className="totalcost2">
+  {new Intl.NumberFormat().format(
+    packageView?.stayAt?.reduce(
+      (total, currentval) => total + currentval.price_to_cal + currentval.childprice_to_cal,
+      0
+    )
+  )}
+</p>
+
       </div>
 
       {/* Collapsible section */}
@@ -326,7 +361,17 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
 
               <div className="pds2left">
                 <p className="pdlepar1">
-                  <div>INR</div> <p>{((Math.floor(packageView?.GrandTotal/packageView?.numberOfPeople))*discount).toFixed(0)}</p> <span>per person</span>{" "}
+                  <div>INR</div> <p>{new Intl.NumberFormat().format(
+                      Math.floor(
+                       ( (
+                          (packageView?.subtotal_to_cal +
+                            Math.round(packageView?.subtotal_to_cal * serviceCharge) +
+                            Math.round(packageView?.subtotal_to_cal * serviceCharge * GSTCharge)) /
+                          packageView?.numberOfPeople
+                        )*discount).toFixed(0)
+                      )
+                    )}</p> <span>per person</span>{" "}
+                  {/* <div>INR</div> <p>{((Math.floor(packageView?.GrandTotal/packageView?.numberOfPeople))*discount).toFixed(0)}</p> <span>per person</span>{" "} */}
                 </p>
               </div>
             </div>
@@ -334,10 +379,11 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
             <p className="line1"></p>
 
             <button onClick={()=>setOpenform(true)}>
-              <span>REQUEST ENQUIRY</span>
+              <span>REQUEST ENQUIRY </span>
             </button>
 
           </div>
+
 
           <div
             className={`formdetail ${
@@ -370,7 +416,7 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
                 <input type="number" name='nb_trav' required />
               </label>
 
-              <div className="dohalf">
+              {/* <div className="dohalf">
                 <input
                   type="number"
                   placeholder="+91"
@@ -384,7 +430,21 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
                   required
                      name='mobile'
                 />
-              </div>
+              </div> */}
+
+<PhoneInput
+  country={'in'} 
+  value={phone}
+  onChange={setPhone}
+  inputProps={{
+    name: 'mobile',
+    required: true,
+    autoFocus: true
+  }}
+  // containerStyle={{ marginBottom: '1rem' }}
+  inputClass="myphone" 
+
+/>
 
               <div className="dohalf">
                 <input
@@ -407,7 +467,7 @@ function PDSec2({ packageView, isInView2  , setOpenform}) {
                   name="message"
               ></textarea>
 
-              <button className="requeeqebtn">
+              <button disabled={loading} className="requeeqebtn">
                 <span>REQUEST ENQUIRY</span>
               </button>
             </form>
