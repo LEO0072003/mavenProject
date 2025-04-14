@@ -305,9 +305,7 @@ export const TOP_PACKAGES = [
       ] ,
       packageSubTotal:"2,32,002" ,
       subtotal_to_cal: 232002 , 
-      // serviceCharge:"11,600" ,
       GSTCharge:"580" ,
-      GrandTotal:244182 ,
       numberOfPeople: 10 
 
     },
@@ -545,9 +543,203 @@ export const TOP_PACKAGES = [
       ] ,
       packageSubTotal:"70,742" ,
       subtotal_to_cal: 70742 , 
-      // GSTCharge:"580" ,
-      GrandTotal:244182 ,
       numberOfPeople:4
+
+    },
+    {
+      id:3 ,
+      img: a3,
+      heading:"Trip duration 3 nights & 4 days (Private passenger cruise / Makruzz only) " ,
+      dayNight: "3 nights & 4 Days",
+      days: "4",
+      night: "3",
+      dayIn: [
+        {
+          day: "1",
+          desti: "Port Blair",
+        },
+        {
+          day: "2",
+          desti: "Swaraaj Dweep",
+        },
+     
+      ],
+         
+      included: [
+        {
+          img: location,
+          title: "Transfer Included",
+        },
+        {
+          img: location,
+          title: "Stay Included",
+        },
+      ],
+
+      title: "Trip duration: 3 nights & 4 Days",
+       subtitle:"2 Adults" ,
+
+      itinerary: [
+        {
+          daynum: "1",
+          title: "Very early arrival at Shri Vijaya Puram (Port Blair) and transfer to Swaraaj Dweep (Havelock) Island",
+          para: "Receive at the airport, A/c car with private driver will receive you and drive you to a close by restaurant for some refreshments and drop you at Shri Vijaya Puram (Port Blair) jetty to board the cruise to Swaraaj Dweep (Havelock)at 10:00 am for a 11:00 am cruise. You will reach Swaraaj Dweep (Havelock) Island at 12:30pm. Be picked up by a/c private cab and driver and drop at the hotel. After check into the hotel and some rest, head to Radhanagar beach, Asia’s best beach awarded by Trip Advisor. Radhanagar is also for its lovely sunset. After sunset return to the hotel and retire for the day. ",
+          from: "Port Blair Airport ",
+          to: "hotel",
+
+          transport: [
+            {
+              trans: "A/c cab pickup / drop at Shri Vijaya Puram (Port Blair)",
+              price: "₹300",
+              price_to_cal: 300,
+            },
+            {
+              trans: "Private passenger cruise ticket to Swaraaj Dweep (Havelock) Island from Shri Vijaya Puram (Port Blair)",
+              price: "1,775 x 2 = ₹3,550",
+              price_to_cal: 3550,
+            },
+            {
+              trans: "A/c cab pickup at Swaraaj Dweep (Havelock) Island and drop to the hotel",
+              price: "₹250",
+              price_to_cal: 250,
+            },
+            {
+              trans: "A/c cab trip to Radhanagar beach and back to the hotel",
+              price: "₹850",
+              price_to_cal: 850,
+            },
+          ],
+            
+
+        },
+        {
+          daynum: "2",
+          title: "Elephant Beach Trip & Day for Scuba Diving (Optional)",
+          para: "Early morning rise by 7am, cab will pick you from the hotel and drop you at the dive centre. The dive centre will then take you on their private speed boat to the dive spot for diving. It will be a fun dive. After the dive is over you will return to the dive centre. Breakfast at Havelock Hotel / resort and at around 9:00am reach Havelock jetty. Our coordinator will guide you to the trekking point to Elephant beach. Elephant beach is known for its pristine beach and the coral reef with loads of fish life. Snorkelling is complimentary. You can indulge in sea walking too organized by sea link adventures. Return to Havelock Jetty by lunch time by the speed boat. Head back to the hotel and retire for the day.",
+          from: "hotel in Port Blair",
+          to: " Baratang Island ",
+          transport: [
+            {
+              trans: "A/c cab pickup from Hotel to SwaraajDweep (Havelock Jetty):",
+              price: "₹250",
+              price_to_cal: 250,
+            },
+            {
+              trans: "Speed boat tickets on sharing basis",
+              price: "1,000 x 2 = ₹2,000",
+              price_to_cal: 2000,
+            },
+            {
+              trans: "A/c cab pickup from SwaraajDweep (Havelock) jetty to Hotel",
+              price: "₹250",
+              price_to_cal: 250,
+            },
+         
+          ],
+          
+          
+        },
+        {
+          daynum: "3",
+          title: "Return to Shri Vijaya Puram (Port Blair) from Swaraaj Dweep (Havelock) Island in the morning and visit Subash Chandra Bose Dweep (Ross Island)",
+          para: "Lazy morning rise and checkout by 8:00am and after breakfast, head to Swaraaj Dweep (Havelock) jetty by 9:30am to board the morning cruise back to Shri Vijaya Puram (Port Blair) at 10:45am. Reach Shri Vijaya Puram (Port Blair) by 12:15pm in the noon. Visit Subash Chandra Bose Dweep (Ross Island) was the first administrative island in the British rule of the islands. The island now in the ruins depicts the brilliant architecture that evolved in the time of the British rule. A walk through the island will enlighten you about the living conditions of the British in the time of the Indian freedom struggle. A visit to the museum at Subash Chandra Bose Dweep (Ross Island) will showcase the stages of development in the Island. One can choose to drive around on a golf cart on direct payment at Subash Chandra Bose Island (Ross Island). Later in the evening return back to the hotel and retire for the day.",
+          from: "Port Blair jetty ",
+          to: " Swaraaj Dweep ",
+          transport: [
+            {
+              trans: "A/c cab pickup from hotel and drop to Swaraaj Dweep (Havelock) jetty",
+              price: "₹250",
+              price_to_cal: 250,
+            },
+            {
+              trans: "Private passenger cruise tickets to Shri Vijaya Puram (Port Blair) from Swaraaj Dweep (Havelock)",
+              price: "1,775 x 2 = ₹3,550",
+              price_to_cal: 3550,
+            },
+            {
+              trans: "A/c cab pickup from Shri Vijaya Puram (Port Blair) jetty and drop to the hotel ",
+              price: "₹350",
+              price_to_cal: 350,
+            },
+            {
+              trans: "A/c cab pickup from the hotel to Aberdeen jetty to visit Subash Chandra Bose Dweep (RossIsland) and back to hotel ",
+              price: "₹500",
+              price_to_cal: 500,
+            },
+            {
+              trans: "Speed boat tickets to Subash Chandra Bose Dweep (Ross Island) ",
+              price: "570 x 2 = ₹1,140",
+              price_to_cal: 1140,
+            },
+            {
+              trans: "(Entry ticket to Subash Chandra Bose Dweep (Ross Island) at Subash Chandra Bose Dweep (Ross Island) will be borne by the guest",
+              price: "40 x 2 = ₹80",
+              price_to_cal: 80,
+            },
+          ],
+          
+          
+        },
+        {
+          daynum: "4",
+          title: " Return Home with Sweet Memory",
+          para: "Early morning rise and after breakfast head to the airport according the flight schedule. If time provides, do some shopping on the way.",
+          from: "Scuba Diving Day",
+          to: "Elephant Beach ",
+          transport: [
+            {
+              trans: "A/c cab pickup from the hotel and drop to airport",
+              price: "₹500",
+              price_to_cal: 500,
+            },
+           
+          ]
+          
+          
+        },
+       
+     
+      ],
+     
+      stayAt: [
+        {
+          at: "Shri Vijaya Puram (Port Blair)",
+          hotel: "Hotel Star Paradise Deluxe Sea View room on CP Plan",
+          equa: "3,808 x 1 rooms x 1 nights",
+          price: "3,808",
+          price_to_cal: 3808,
+          childequa: "0",
+          childprice: "0",
+          childprice_to_cal: 0
+        },
+        {
+          at: "Swaraaj Dweep (Havelock Island)",
+          hotel: "Lemon Grass Beach Resort Lagoon room on CP Plan",
+          equa: "4,480 x 1 room x 2 nights",
+          price: "8,960",
+          price_to_cal: 8960,
+          childequa: "0",
+          childprice: "0",
+          childprice_to_cal: 0
+        },
+       
+      ],      
+      transportTicket:[
+        {
+          title:"Total for transportation, entry tickets and speed boat tickets" ,
+          price:"6,640" , 
+          price_to_cal: 6640
+        } ,
+        {
+          title:"Private passenger cruise tickets" ,
+          price:"7,100" ,
+          price_to_cal: 7100
+        } ,
+
+      ] ,
+      packageSubTotal:"26,508" ,
+      subtotal_to_cal: 26508 , 
+      numberOfPeople:2
 
     },
 
